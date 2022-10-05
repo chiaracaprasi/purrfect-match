@@ -29,7 +29,7 @@ return (
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <p>Connecting humans to their purrfect owners</p>
           <Button
-            variant="primary"
+            variant="secondary"
             size="lg"
             onClick={handleClick}
             // style={{ borderColor: "#D9A15C" }}

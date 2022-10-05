@@ -7,9 +7,10 @@ import { useState } from "react";
 import NavMenu from "./components/Navbar";
 import Card from "react-bootstrap/Card";
 import { Route } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import About from "./components/About";
 import LandingPage from "./components/LandingPage";
-import SurveyForm from "./components/SurveyForm/SurveyForm"
+import SurveyForm from "./components/SurveyForm/SurveyForm";
 
 function App() {
   // const [title, setTitle] = useState(undefined);
@@ -32,14 +33,28 @@ function App() {
   // };
 
   return (
-    <>
       <div className="App">
         <NavMenu></NavMenu>
-        <Route path="/">
-          <LandingPage />
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route path="/survey">
+            <SurveyForm />
+          </Route>
+          <Route path='*' render={() => (<div>Page Not Found</div>)} />
+        </Switch>
+      </div>
+  );
+}
 
-        {/* <header className="App-header">
+export default App;
+
+{
+  /* <header className="App-header">
           <p>Connecting humans to their purrfect owners</p>
           <Button
             variant="primary"
@@ -78,18 +93,11 @@ function App() {
               </Card.Text>
             </Card.Body>
           </Card>
-        </header> */}
-        {/* {title && <div>This is a title: {title} </div>} */}
-        {/* {title !== undefined ? <div>This is a title: {title} </div> : ""} */}
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/survey">
-          <SurveyForm />
-        </Route>
-      </div>
-    </>
-  );
+        </header> */
 }
-
-export default App;
+{
+  /* {title && <div>This is a title: {title} </div>} */
+}
+{
+  /* {title !== undefined ? <div>This is a title: {title} </div> : ""} */
+}

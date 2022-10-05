@@ -17,8 +17,9 @@
 
 .App-header {
   /* background-color: #282c34; */
-  background-image: url("/public/images/cat-sleeping.png");
+  background-image: url("/public/images//cat-kitten.png");
   background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
