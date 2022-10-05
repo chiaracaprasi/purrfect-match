@@ -1,0 +1,19 @@
+// overwrite theme variables 
+
+$white: #ffffff;
+
+$theme-colors: (
+    "light":      #f0dfce,
+    "dark":       #110e34,
+    "primary":    #532045,
+    "secondary":  #eea5c5,
+    "info":       #69ae6b,
+    "success":    #33ac79,
+    "warning":    #dad12f,
+    "danger":     #e5401a,
+);
+ 
+
+// import all of Bootstrap styles - keep this at the bottom!
+
+@import "../node_modules/bootstrap/scss/bootstrap";
