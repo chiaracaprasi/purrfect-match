@@ -15,7 +15,7 @@ const MasterForm = () => {
       <Card
         style={{ width: "18rem" }}
         as={Button}
-        bg={cardSelected === 1 ? "selected" : "light"}
+        bg={cardSelected === 1 ? "primary" : "secondary"}
         onClick={() => handleCardClick(1)}
       >
         {/* <Card.Img variant="top" src="" /> */}

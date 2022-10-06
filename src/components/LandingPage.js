@@ -24,22 +24,22 @@ const handleClick = async () => {
 };
 
 return (
-<div>
-<header className="App-header">
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <p>Connecting humans to their purrfect owners</p>
-          <Button
-            variant="secondary"
-            size="lg"
-            onClick={handleClick}
-            // style={{ borderColor: "#D9A15C" }}
-          >
-            Find Your Purrfect Match
-          </Button>
-</header>
-</div>
-
-)
+  <div>
+    <header className="App-header">
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      <p>Connecting humans to their purrfect owners</p>
+      <Button
+        href="/survey"
+        variant="secondary"
+        size="lg"
+        onClick={handleClick}
+        // style={{ borderColor: "#D9A15C" }}
+      >
+        Find Your Purrfect Match
+      </Button>
+    </header>
+  </div>
+);
 }
 
 export default LandingPage;
