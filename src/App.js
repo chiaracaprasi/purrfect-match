@@ -10,7 +10,7 @@ import { Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import About from "./components/About";
 import LandingPage from "./components/LandingPage";
-import SurveyForm from "./components/SurveyForm/SurveyForm";
+import Form from "./components/Form/Form";
 
 function App() {
   // const [title, setTitle] = useState(undefined);
@@ -42,8 +42,8 @@ function App() {
           <Route exact path="/about">
             <About />
           </Route>
-          <Route path="/survey">
-            <SurveyForm />
+          <Route exact path="/form">
+            <Form />
           </Route>
           <Route path='*' render={() => (<div>Page Not Found</div>)} />
         </Switch>
