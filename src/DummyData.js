@@ -25,7 +25,7 @@ export const dummy_data = [
   },
   {
     id: 4,
-    image: "/images/cat-tabby.png",
+    image: "/images/cat-peaking.png",
     name: "Molly",
     gender: "female",
     age: 7,
@@ -34,10 +34,10 @@ export const dummy_data = [
 
   {
     id: 4,
-    image: "/images/cat-tabby.png",
-    name: "Molly",
-    gender: "female",
-    age: 7,
-    bio: "Very independent, Molly is an outdoor cat and follows strict dietery requirements.",
+    image: "/images/cat-timmy.jpg",
+    name: "Timmy",
+    gender: "male",
+    age: 8,
+    bio: "Goregous and reserved, the way to Timmy's heart is via is stomach.",
   },
 ];
