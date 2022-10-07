@@ -11,6 +11,7 @@ FLUSH PRIVILEGES;
 
 -- create tables
 CREATE TABLE IF NOT EXISTS cats.pet_details (
+       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
        id    	  INT(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
        name 	  VARCHAR(50)  NOT NULL,
        dob 	      DATE	       NOT NULL,
