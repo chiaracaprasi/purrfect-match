@@ -11,7 +11,10 @@ import { Switch } from "react-router-dom";
 import About from "./components/About";
 import LandingPage from "./components/LandingPage";
 import SurveyForm from "./components/SurveyForm/SurveyForm";
-import CatMatches from "./components/CatList"
+import CatMatches from "./components/CatList";
+import RandomCatFact from "./components/RandomCatFact";
+import CatBreedInfo from "./components/CatBreedInfo";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   // const [title, setTitle] = useState(undefined);
@@ -49,7 +52,14 @@ function App() {
         <Route path="/cat-matches">
           <CatMatches />
         </Route>
-        <Route path="*" render={() => <div>Page Not Found</div>} />
+        <Route path="/cat-facts">
+          <RandomCatFact />
+        </Route>
+        <Route path="/cat-breeds">
+          <CatBreedInfo />
+        </Route>
+        <PageNotFound/>
+        {/* <Route path="*" render={() => <div><img src='/images/404-cat.png'/></div>} /> */}
       </Switch>
     </div>
   );
