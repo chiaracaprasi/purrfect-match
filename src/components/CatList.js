@@ -8,7 +8,7 @@ const CatList = () => {
   const listItems = dummy_data.map((cat) => (
     <p>
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Img variant="top" src={cat.image} />
         <Card.Body>
           <Card.Title>{cat.name}</Card.Title>
           <Card.Text>
@@ -18,7 +18,7 @@ const CatList = () => {
               <li>About: {cat.bio}</li>
             </ul>
           </Card.Text>
-          <Button variant="primary">Learn More</Button>
+          <Button variant="secondary">Match</Button>
         </Card.Body>
       </Card>
     </p>
