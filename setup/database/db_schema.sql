@@ -11,7 +11,7 @@ FLUSH PRIVILEGES;
 
 -- create tables
 CREATE TABLE IF NOT EXISTS cats.pet_details (
-       id    	  INT(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+       id    	  INT(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
        name 	  VARCHAR(50)  NOT NULL,
        dob 	      DATE	       NOT NULL,
        breed 	  VARCHAR(50)  NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS cats.pet_details (
 );
 
 CREATE TABLE IF NOT EXISTS cats.pet_personality (
-       id    	     INT(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
+       id    	     INT(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
        energy 	     ENUM('1', '2', '3') NOT NULL,
        social 	     ENUM('1', '2', '3') NOT NULL,
        other_animals SET('none', 'cat', 'dog', 'small') NOT NULL,
