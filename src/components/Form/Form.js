@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { ProgressBar } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import "./Form.css";
 import Indoor from "./Indoor";
 import Children from "./Children";
 import OtherAnimals from "./OtherAnimals";

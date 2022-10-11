@@ -8,7 +8,7 @@ function Indoor({ formData, setFormData }) {
       <Card.Header>What is your home like?</Card.Header>
       <Card.Body>
         <CardGroup>
-          <Card>
+          <Card className="choice-card">
             <Card.Body>
               <input
                 type="radio"
@@ -21,7 +21,7 @@ function Indoor({ formData, setFormData }) {
               No outdoor space, or on a busy street
             </Card.Body>
           </Card>
-          <Card>
+          <Card className="choice-card">
             <Card.Body>
               <input
                 type="radio"
