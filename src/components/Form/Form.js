@@ -18,54 +18,46 @@ function Form() {
     social: "1",
   });
 
-  const formTitles = [
-    "Your home",
+  const questions = [
+    "Your Home",
     "Your Family",
-    "Other Animals",
     "Grooming",
-    "Playtime",
+    "Energy",
     "Social",
   ];
-  // const pages = ["Indoor", "Children", "OtherAnimals", "Grooming", "Energy", "Social"]
 
   const PageDisplay = () => {
     if (page === 0) {
       return <Indoor formData={formData} setFormData={setFormData} />;
     } else if (page === 1) {
-      return <Children formData={formData} setFormData={setFormData} />;
+      return (
+        <React.Fragment>
+          <Children formData={formData} setFormData={setFormData} />,
+          <OtherAnimals formData={formData} setFormData={setFormData} />,
+        </React.Fragment>
+      );
     } else if (page === 2) {
-      return <OtherAnimals formData={formData} setFormData={setFormData} />;
-    } else if (page === 3) {
       return <Grooming formData={formData} setFormData={setFormData} />;
-    } else if (page === 4) {
+    } else if (page === 3) {
       return <Energy formData={formData} setFormData={setFormData} />;
     } else {
       return <Social formData={formData} setFormData={setFormData} />;
     }
   };
 
-  let percentage =
-    page === 0
-      ? 16
-      : page === 1
-      ? 32
-      : page === 2
-      ? 48
-      : page === 3
-      ? 64
-      : page === 4
-      ? 81
-      : 100;
+  const now =
+    page === 0 ? 20 : page === 1 ? 40 : page === 2 ? 60 : page === 3 ? 80 : 100;
 
   return (
     <div className="form">
       <div className="form-container">
-        <div className="header">
-          <h1>{formTitles[page]}</h1>
-        </div>
         <div className="progressBar">
-          <ProgressBar now={percentage} />
+          <ProgressBar animated now={now} label={`${now}%`} />
         </div>
+        <div className="header">
+          <h1>{questions[page]}</h1>
+        </div>
+
         <div className="body">{PageDisplay()}</div>
         <div className="footer">
           <button
@@ -76,7 +68,7 @@ function Form() {
           </button>
           <button
             onClick={() => {
-              if (page === formTitles.length - 1) {
+              if (page === questions.length - 1) {
                 alert("submitted");
                 console.log(formData);
               } else {
@@ -84,7 +76,7 @@ function Form() {
               }
             }}
           >
-            {page === formTitles.length - 1 ? "Match Me!" : "Next"}
+            {page === questions.length - 1 ? "Match Me!" : "Next"}
           </button>
         </div>
       </div>
