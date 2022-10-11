@@ -55,8 +55,8 @@ function Form() {
     page === 0 ? 20 : page === 1 ? 40 : page === 2 ? 60 : page === 3 ? 80 : 100;
 
   return (
-    <Card style={{ width: "25%" }} className="mx-auto">
-      <div className="form-container">
+    <Card style={{ width: "40%" }} className="mx-auto">
+      <Card.Body>
         <div className="progressBar">
           <ProgressBar animated now={now} label={`${now}%`} />
         </div>
@@ -84,7 +84,7 @@ function Form() {
             {page === questions.length - 1 ? "Match Me!" : "Next"}
           </button>
         </div>
-      </div>
+      </Card.Body>
     </Card>
   );
 }
