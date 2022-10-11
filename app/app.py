@@ -2,10 +2,10 @@
 """
 create a variable app, instance of Flask
 """
-from views import app_views
 from flask import Flask, jsonify
 from flask_cors import CORS
 from models import storage
+from views import app_views
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
@@ -15,7 +15,7 @@ app.register_blueprint(app_views)
 @app.teardown_appcontext
 def teardown_db(exception=None):
     """remove the current SQLAlchemy Session"""
-    storage.close()
+    models.storage.close()
 
 
 @app.errorhandler(404)

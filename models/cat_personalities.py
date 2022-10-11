@@ -3,7 +3,7 @@
 Defines class CatPersonalities
 """
 
-from models import storage
+import models
 from models.base_model import Base, BaseModel
 from models.cat_details import CatDetails
 from sqlalchemy import Boolean, Column, Enum, ForeignKey, Integer
@@ -31,4 +31,4 @@ class CatPersonalities(BaseModel, Base):
         retrieves a CatDetails object from storage if matching id
         is found. Returns object or None if no match found
         """
-        return storage.get(CatDetails, id)
+        return models.storage.get(CatDetails, id)

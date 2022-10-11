@@ -22,11 +22,11 @@ class DBStorage:
     def __init__(self):
         """Instantiate a DBStorage object"""
         self.__engine = create_engine(
-            'mysql+pymsql://root:password@localhost/pets')
+            'mysql+mysqldb://root:password@localhost/cats')
 
     def reload(self):
         """reloads data from the database"""
-        Base.medadata.create_all(self.__engine)
+        Base.metadata.create_all(self.__engine)
         sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sess_factory)
         self.__session = Session

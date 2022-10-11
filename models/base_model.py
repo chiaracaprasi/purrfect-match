@@ -4,7 +4,7 @@ Defines class BaseModel
 """
 
 from datetime import datetime
-from models import storage
+import models
 from sqlalchemy import Column, Integer, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 import uuid
@@ -40,8 +40,8 @@ class BaseModel:
         """adds a new instance or saves changes to an existing
         instance to current database session
         """
-        storage.new(self)
-        storage.save()
+        models.storage.new(self)
+        models.storage.save()
 
     def delete(self):
         """delete an instance from the current database session"""
