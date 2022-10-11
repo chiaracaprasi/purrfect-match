@@ -13,7 +13,7 @@ function Indoor({ formData, setFormData }) {
               <input
                 type="radio"
                 value="1"
-                checked={formData.indoor === "y"}
+                checked={formData.indoor === "1"}
                 onChange={(e) => {
                   setFormData({ ...formData, indoor: e.target.value });
                 }}
@@ -26,7 +26,7 @@ function Indoor({ formData, setFormData }) {
               <input
                 type="radio"
                 value="0"
-                checked={formData.indoor === "n"}
+                checked={formData.indoor === "0"}
                 onChange={(e) => {
                   setFormData({ ...formData, indoor: e.target.value });
                 }}

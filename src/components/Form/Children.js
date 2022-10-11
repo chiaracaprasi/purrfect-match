@@ -15,7 +15,7 @@ function Children({ formData, setFormData }) {
               <input
                 type="radio"
                 value="1"
-                checked={formData.children === "y"}
+                checked={formData.children === "1"}
                 onChange={(e) => {
                   setFormData({ ...formData, children: e.target.value });
                 }}
@@ -28,7 +28,7 @@ function Children({ formData, setFormData }) {
               <input
                 type="radio"
                 value="0"
-                checked={formData.children === "n"}
+                checked={formData.children === "0"}
                 onChange={(e) => {
                   setFormData({ ...formData, children: e.target.value });
                 }}
