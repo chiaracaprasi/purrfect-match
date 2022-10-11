@@ -9,8 +9,7 @@ function Indoor({ formData, setFormData }) {
       <Card.Body>
         <CardGroup>
           <Card>
-            <label>
-              No outdoor space, or on a busy street
+            <Card.Body>
               <input
                 type="radio"
                 value="y"
@@ -19,11 +18,11 @@ function Indoor({ formData, setFormData }) {
                   setFormData({ ...formData, indoor: e.target.value });
                 }}
               />
-            </label>
+              No outdoor space, or on a busy street
+            </Card.Body>
           </Card>
           <Card>
-            <label>
-              Lots of outdoor space and/or on a quiet street
+            <Card.Body>
               <input
                 type="radio"
                 value="n"
@@ -32,7 +31,8 @@ function Indoor({ formData, setFormData }) {
                   setFormData({ ...formData, indoor: e.target.value });
                 }}
               />
-            </label>
+              Lots of outdoor space and/or on a quiet street
+            </Card.Body>
           </Card>
         </CardGroup>
       </Card.Body>
