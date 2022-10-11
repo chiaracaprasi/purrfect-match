@@ -6,6 +6,7 @@ from models.cat_details import CatDetails
 from models.cat_personalities import CatPersonalities
 
 
+@staticmethod
 def check_match(cat_data, form_data):
     """
     compares form data provided in body request with CatPersonality
