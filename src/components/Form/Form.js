@@ -5,6 +5,7 @@ import OtherAnimals from "./OtherAnimals";
 import Grooming from "./Grooming";
 import Energy from "./Energy";
 import Social from "./Social";
+import { ProgressBar } from "react-bootstrap";
 
 function Form() {
   const [page, setPage] = useState(0);
@@ -43,11 +44,27 @@ function Form() {
     }
   };
 
+  let percentage =
+    page === 0
+      ? 16
+      : page === 1
+      ? 32
+      : page === 2
+      ? 48
+      : page === 3
+      ? 64
+      : page === 4
+      ? 81
+      : 100;
+
   return (
     <div className="form">
       <div className="form-container">
         <div className="header">
           <h1>{formTitles[page]}</h1>
+        </div>
+        <div className="progressBar">
+          <ProgressBar now={percentage} />
         </div>
         <div className="body">{PageDisplay()}</div>
         <div className="footer">
@@ -60,7 +77,7 @@ function Form() {
           <button
             onClick={() => {
               if (page === formTitles.length - 1) {
-                alert("FORM SUBMITTED");
+                alert("submitted");
                 console.log(formData);
               } else {
                 setPage((currentPage) => currentPage + 1);
