@@ -3,14 +3,18 @@ import React from "react";
 function OtherAnimals({ formData, setFormData }) {
   const animalOptions = ["Cat", "Dog", "Small Animals e.g. guinea pig, bird"];
 
-  const handleCheck = (chosenAnimalIndex) => {
+  const handleCheck = (index) => {
     const currentAnimals = formData.otherAnimals;
-    const currentChoiceIndex = currentAnimals.indexOf(chosenAnimalIndex);
+    const currentChoiceIndex = currentAnimals.indexOf(index);
 
     if (currentChoiceIndex === -1) {
-      currentAnimals.push(chosenAnimalIndex);
+      currentAnimals.push(index);
     } else {
       currentAnimals.splice(currentChoiceIndex, 1);
+    }
+    console.log(currentAnimals);
+    if (currentAnimals.includes(0)) {
+      currentAnimals.push("cat");
     }
     setFormData({ ...formData, otherAnimals: currentAnimals });
   };
