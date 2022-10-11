@@ -12,10 +12,6 @@ function OtherAnimals({ formData, setFormData }) {
     } else {
       currentAnimals.splice(currentChoiceIndex, 1);
     }
-    console.log(currentAnimals);
-    if (currentAnimals.includes(0)) {
-      currentAnimals.push("cat");
-    }
     setFormData({ ...formData, otherAnimals: currentAnimals });
   };
 
