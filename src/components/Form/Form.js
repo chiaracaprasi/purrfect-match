@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import Card from "react-bootstrap/Card";
+import { ProgressBar } from "react-bootstrap";
 import Indoor from "./Indoor";
 import Children from "./Children";
 import OtherAnimals from "./OtherAnimals";
 import Grooming from "./Grooming";
 import Energy from "./Energy";
 import Social from "./Social";
-import { ProgressBar } from "react-bootstrap";
 
 function Form() {
   const [page, setPage] = useState(0);
@@ -31,10 +32,10 @@ function Form() {
       return <Indoor formData={formData} setFormData={setFormData} />;
     } else if (page === 1) {
       return (
-        <React.Fragment>
-          <Children formData={formData} setFormData={setFormData} />,
-          <OtherAnimals formData={formData} setFormData={setFormData} />,
-        </React.Fragment>
+        <>
+          <Children formData={formData} setFormData={setFormData} />
+          <OtherAnimals formData={formData} setFormData={setFormData} />
+        </>
       );
     } else if (page === 2) {
       return <Grooming formData={formData} setFormData={setFormData} />;
@@ -45,11 +46,16 @@ function Form() {
     }
   };
 
+  const handleSubmit = () => {
+    alert(`Submitted`);
+    console.log(formData);
+  };
+
   const now =
     page === 0 ? 20 : page === 1 ? 40 : page === 2 ? 60 : page === 3 ? 80 : 100;
 
   return (
-    <div className="form">
+    <Card style={{ width: "25%" }} className="mx-auto">
       <div className="form-container">
         <div className="progressBar">
           <ProgressBar animated now={now} label={`${now}%`} />
@@ -69,8 +75,7 @@ function Form() {
           <button
             onClick={() => {
               if (page === questions.length - 1) {
-                alert("submitted");
-                console.log(formData);
+                handleSubmit();
               } else {
                 setPage((currentPage) => currentPage + 1);
               }
@@ -80,7 +85,7 @@ function Form() {
           </button>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }
 
