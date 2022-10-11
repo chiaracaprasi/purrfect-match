@@ -12,7 +12,7 @@ function Indoor({ formData, setFormData }) {
             <Card.Body>
               <input
                 type="radio"
-                value="y"
+                value="1"
                 checked={formData.indoor === "y"}
                 onChange={(e) => {
                   setFormData({ ...formData, indoor: e.target.value });
@@ -25,7 +25,7 @@ function Indoor({ formData, setFormData }) {
             <Card.Body>
               <input
                 type="radio"
-                value="n"
+                value="0"
                 checked={formData.indoor === "n"}
                 onChange={(e) => {
                   setFormData({ ...formData, indoor: e.target.value });

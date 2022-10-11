@@ -11,8 +11,8 @@ import Social from "./Social";
 function Form() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
-    indoor: "y",
-    children: "y",
+    indoor: "1",
+    children: "1",
     otherAnimals: [],
     grooming: "1",
     energy: "1",
