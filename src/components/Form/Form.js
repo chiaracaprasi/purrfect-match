@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { ProgressBar } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 import Indoor from "./Indoor";
 import Children from "./Children";
 import OtherAnimals from "./OtherAnimals";
@@ -58,7 +59,7 @@ function Form() {
     <Card style={{ width: "40%" }} className="mx-auto">
       <Card.Body>
         <div className="progressBar">
-          <ProgressBar animated now={now} label={`${now}%`} />
+          <ProgressBar now={now} label={`${now}%`} />
         </div>
         <div className="header">
           <h1>{questions[page]}</h1>
@@ -66,13 +67,15 @@ function Form() {
 
         <div className="body">{PageDisplay()}</div>
         <div className="footer">
-          <button
+          <Button
+            variant="primary"
             disabled={page === 0}
             onClick={() => setPage((currentPage) => currentPage - 1)}
           >
             Prev
-          </button>
-          <button
+          </Button>{" "}
+          <Button
+            variant="primary"
             onClick={() => {
               if (page === questions.length - 1) {
                 handleSubmit();
@@ -82,7 +85,7 @@ function Form() {
             }}
           >
             {page === questions.length - 1 ? "Match Me!" : "Next"}
-          </button>
+          </Button>
         </div>
       </Card.Body>
     </Card>
