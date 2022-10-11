@@ -23,11 +23,5 @@ def invalid_route(e):
     print("went straight to error")
     return {"error": "NO GOOD"}, 404
 
-
-@app.route('/', strict_slashes=False)
-def test_hello():
-    """return a quicky howdy"""
-    return "howdy there"
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port="5000", threaded=True, debug=True)
