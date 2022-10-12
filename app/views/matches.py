@@ -6,7 +6,6 @@ from models.cat_details import CatDetails
 from models.cat_personalities import CatPersonalities
 
 
-@staticmethod
 def check_match(cat_data, form_data):
     """
     compares form data provided in body request with CatPersonality
@@ -30,6 +29,8 @@ def match_cats():
 
     body_requirements = ['indoor', 'children', 'otherAnimals',
                          'grooming', 'energy', 'social']
+    other_animals = {0: 'cat', 1: 'dog', 2: 'small'}
+
     for req in body_requirements:
         if req not in body:
             abort(400, description=f"Missing {req}")

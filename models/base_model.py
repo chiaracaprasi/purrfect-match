@@ -68,4 +68,4 @@ class BaseModel:
         class, or all objects if cls is None
         returns a dictionary with keys and objects as values
         """
-        return storage.all(cls)
+        return models.storage.all(cls)
