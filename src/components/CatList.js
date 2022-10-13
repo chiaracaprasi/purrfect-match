@@ -1,35 +1,32 @@
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 import React, { useState } from "react";
-import { dummy_data } from "../DummyData";
 import "./CatList.css";
 
-const CatList = ({ breeds = ["Tuxedo", "Russian Blue", "Bombay"] }) => {
+const CatList = ({ cats = [] }) => {
   const renderCatCard = (cat) => {
+    console.log(cat);
     return (
-      <p>
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={cat.image} />
-          <Card.Body>
-            <Card.Title>{cat.name}</Card.Title>
-            <Card.Text>
-              <ul>
-                <li>Age: {cat.age}</li>
-                <li>Gender: {cat.gender}</li>
-                <li>About: {cat.bio}</li>
-                <li>
-                  Breed: {breeds[Math.floor(Math.random() * breeds.length)]}
-                </li>
-              </ul>
-            </Card.Text>
-            <Button variant="secondary">Match</Button>
-          </Card.Body>
-        </Card>
-      </p>
+      <Card style={{ width: "18rem" }}>
+        <Card.Img  className="img-thumbnail" variant="top" src={cat.photo} />
+        <Card.Body>
+          <Card.Title>{cat.name}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">
+            Cat age: {cat.dob} Gender: {cat.sex}
+          </Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">
+            Breed: {cat.breed}
+          </Card.Subtitle>
+          <Card.Text>
+            About: {cat.blurb}
+          </Card.Text>
+          <Button variant="secondary">Match</Button>
+        </Card.Body>
+      </Card>
     );
   };
 
-  const listItems = dummy_data.map((cat) => renderCatCard(cat));
+  const listItems = cats.map((cat) => renderCatCard(cat));
 
   return (
     <>
