@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Card from "react-bootstrap/Card";
 import { ProgressBar } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -48,9 +49,20 @@ function Form() {
     }
   };
 
-  const handleSubmit = () => {
-    alert(`Submitted`);
+  const handleSubmit = (e) => {
     console.log(formData);
+    axios({
+      method: "post",
+      url: "http://68d0752c1ac8.1e732e4d.hbtn-cod.io:5000/app/cat_matches",
+      data: { ...formData },
+    })
+      .then((result) => {
+        console.log(result.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    alert(`Submitted`);
   };
 
   const now =
