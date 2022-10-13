@@ -73,6 +73,7 @@ def match_cats():
     for req in body_requirements:
         if req not in body:
             abort(400, description=f"Missing {req}")
+
     body['other_animals'] = body['otherAnimals']
     body_requirements[2] = 'other_animals'
     print(body_requirements)
