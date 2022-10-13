@@ -18,9 +18,11 @@ def all_cats():
 
     matches_dict = {}
     for cat_personality in all_personalities:
-        id_key = str(cat_personality['details_id'])
+        cat_personality = cat_personality.to_dict()
+        cat_personality['other_animals'] = list(cat_personality['other_animals'])
+        id_key = cat_personality['details_id']
         matches_dict[id_key] = []
-        cat_details = CatPersonalities.get(cat_personality['details_id'])
+        cat_details = CatPersonalities.get(cat_personality['details_id']).to_dict()
         if cat_details:
-            matches_dict[id_key] += [cat_details.to_dict(), cat_personality.to_dict()]
+            matches_dict[id_key] += [cat_details, cat_personality]
     return jsonify(matches_dict)
