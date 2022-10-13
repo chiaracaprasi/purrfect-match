@@ -1,0 +1,13 @@
+.page_not_found {
+  /* background-color: #282c34; */
+  background-image: url("/public/images/404.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
