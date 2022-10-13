@@ -1,9 +1,59 @@
 #!/usr/bin/python3
 """api end point for route /cat_matches"""
 from app.views import app_views
+from datetime import date
 from flask import abort, jsonify, request
 from models.cat_details import CatDetails
 from models.cat_personalities import CatPersonalities
+
+
+def rename_gender(cat):
+    """
+    converts the value of cat attribute 'sex' to do full
+    name 'female' or 'male'
+    """
+    if cat['sex'] == 'f':
+        cat['sex'] = 'female'
+    else:
+        cat['sex'] = 'male'
+
+
+def calculate_age(dob):
+    """
+    Convert datetime object from a CatPersonality instance
+    into an age in years and months in string format
+    """
+    today = date.today()
+    years = today.year - dob.year
+
+    if not years:
+        months = today.month - dob.month
+        if months > 1:
+            return f"{months} months"
+        return f"{months} month"
+
+    if today.month < dob.month:
+        years -= 1
+        months = dob.month - today.month
+    else:
+        months = today.month - dob.month
+
+    if not years:
+        months = today.month - dob.month
+        if months > 1:
+            return f"{months} months"
+        return f"{months} month"
+
+    if months:
+        if years > 1 and months > 1:
+            return f"{years} years and {months} months"
+        if years > 1:
+            return f"{years} years and {months} month"
+        if months > 1:
+            return f"{years} year and {months} months"
+        return f"{years} year and {months} month"
+
+    return f"{years} years"
 
 
 def match_bool(cat_list, attr, form_data):
@@ -63,9 +113,18 @@ def match_cats():
     Return all cats exactly matching the criteria provided or an empty
     dictionary if no matches found
     """
-    body = request.get_json()
-    if not body:
-        abort(400, description="Not a json")
+    # body = request.get_json()
+    # if not body:
+        # abort(400, description="Not a json")
+
+    body = {
+        'indoor': '0',
+        'children': '1',
+        'grooming': '3',
+        'social': '2',
+        'energy': '1',
+        'otherAnimals': []
+    }
 
     body_requirements = ['indoor', 'children', 'otherAnimals',
                          'grooming', 'energy', 'social']
@@ -73,9 +132,9 @@ def match_cats():
     for req in body_requirements:
         if req not in body:
             abort(400, description=f"Missing {req}")
+
     body['other_animals'] = body['otherAnimals']
     body_requirements[2] = 'other_animals'
-    print(body_requirements)
 
     all_personalities = CatPersonalities.all()
     if not all_personalities:
@@ -98,5 +157,11 @@ def match_cats():
         cat_details = CatPersonalities.get(
             cat_personality['details_id']).to_dict()
         if cat_details:
+            print(cat_details['dob'])
+            print(cat_details['sex'])
+            rename_gender(cat_details)
+            print(cat_details['sex'])
+            cat_details['dob'] = calculate_age(cat_details['dob'])
+            print(cat_details['dob'])
             matches_dict[id_key] += [cat_details, cat_personality]
     return jsonify(matches_dict)
