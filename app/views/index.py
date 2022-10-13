@@ -12,31 +12,6 @@ def status():
     return {'status': 'OK'}
 
 
-@app_views.route('/hello', methods=['GET'], strict_slashes=False)
-def hello():
-    """sends a quick howdy"""
-    return "hello there cat-lover"
-
-
-@app_views.route('/test', strict_slashes=False)
-def test_models():
-    """tests python models"""
-    all_cat_details = CatDetails.all()
-    all_cat_personalities = CatPersonalities.all()
-    cat_details_dicts = []
-    cat_personalities_dicts = []
-    for cat in all_cat_details:
-        cat_details_dicts.append(cat.to_dict())
-    for cat in all_cat_personalities:
-        cat_personalities_dicts.append(cat.to_dict())
-    for cat in cat_personalities_dicts:
-        cat['other_animals'] = list(cat['other_animals'])
-    new_dict = {}
-    new_dict['details_list'] = cat_details_dicts
-    new_dict['personalities_list'] = cat_personalities_dicts
-    return jsonify(new_dict)
-
-
 def test_check_match(form_data, cat_data):
     """tests whether form data string is present in
     cat_data array"""
@@ -77,7 +52,8 @@ def test_matches():
         for cat in matched_cats:
             for pet in fake_form['otherAnimals']:
                 matched_cats[:] = [cat for cat in matched_cats
-                                   if test_check_match(pet, cat['other_animals']
+                                   if test_check_match(
+                                    pet, cat['other_animals']
                                    )]
 
     matches_dict = {}
