@@ -15,6 +15,7 @@ import CatMatches from "./components/CatList";
 import RandomCatFact from "./components/RandomCatFact";
 import CatBreedInfo from "./components/CatBreedInfo";
 import PageNotFound from "./components/PageNotFound";
+import AllCats from "./components/AllCats"
 
 function App() {
   // const [title, setTitle] = useState(undefined);
@@ -58,7 +59,10 @@ function App() {
         <Route path="/cat-breeds">
           <CatBreedInfo />
         </Route>
-        <PageNotFound/>
+        <Route path="/all-cats">
+          <AllCats />
+        </Route>
+        <PageNotFound />
         {/* <Route path="*" render={() => <div><img src='/images/404-cat.png'/></div>} /> */}
       </Switch>
     </div>
