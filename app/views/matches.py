@@ -86,15 +86,17 @@ def match_other_pets(cat_list, attr, form_data):
     in cat_list with the passed in form_data from body response.
     Return the cat_list without cats that are incompatible with form_data
     """
-    other_animals = {'0': 'cat', '1': 'dog', '2': 'small'}
+    other_animals = {0: 'cat', 1: 'dog', 2: 'small'}
 
     if not form_data:
         return cat_list
     for cat in cat_list:
+        print(cat[attr])
+        print(form_data)
         for pet in form_data:
             cat_list[:] = [cat for cat in cat_list
                            if other_animals[pet] in cat[attr]]
-
+    return cat_list
 
 match_funcs = {
     'indoor': match_bool,
@@ -106,25 +108,25 @@ match_funcs = {
     }
 
 
-@app_views.route('/cat_matches', methods=['GET'], strict_slashes=False)
+@app_views.route('/cat_matches', methods=['GET', 'POST'], strict_slashes=False)
 def match_cats():
     """
     compare cats retrieved from storage with form data provided in request.
     Return all cats exactly matching the criteria provided or an empty
     dictionary if no matches found
     """
-    # body = request.get_json()
-    # if not body:
-        # abort(400, description="Not a json")
+    body = request.get_json()
+    if not body:
+        abort(400, description="Not a json")
 
-    body = {
-        'indoor': '0',
-        'children': '1',
-        'grooming': '3',
-        'social': '2',
-        'energy': '1',
-        'otherAnimals': []
-    }
+    # body = {
+        # 'indoor': '0',
+        # 'children': '1',
+        # 'grooming': '2',
+        # 'social': '3',
+        # 'energy': '1',
+        # 'otherAnimals': [0]
+    # }
 
     body_requirements = ['indoor', 'children', 'otherAnimals',
                          'grooming', 'energy', 'social']
@@ -157,11 +159,7 @@ def match_cats():
         cat_details = CatPersonalities.get(
             cat_personality['details_id']).to_dict()
         if cat_details:
-            print(cat_details['dob'])
-            print(cat_details['sex'])
             rename_gender(cat_details)
-            print(cat_details['sex'])
             cat_details['dob'] = calculate_age(cat_details['dob'])
-            print(cat_details['dob'])
             matches_dict[id_key] += [cat_details, cat_personality]
     return jsonify(matches_dict)
