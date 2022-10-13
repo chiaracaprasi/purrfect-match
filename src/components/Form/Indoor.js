@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
+import Button from "react-bootstrap/Button";
 
 function Indoor({ formData, setFormData }) {
   return (
@@ -8,7 +9,7 @@ function Indoor({ formData, setFormData }) {
       <Card.Header>What is your home like?</Card.Header>
       <Card.Body>
         <CardGroup>
-          <Card className="choice-card">
+          <Card className="choice-card" as={Button}>
             <Card.Body>
               <input
                 type="radio"
@@ -21,7 +22,7 @@ function Indoor({ formData, setFormData }) {
               No outdoor space, or on a busy street
             </Card.Body>
           </Card>
-          <Card className="choice-card">
+          <Card className="choice-card" as={Button}>
             <Card.Body>
               <input
                 type="radio"
