@@ -8,7 +8,8 @@ from flask_cors import CORS
 from models import storage
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/app/*": {"origins": "0.0.0.0"}})
+cors = CORS(app)
+# cors = CORS(app, resources={r"/app/*": {"origins": "0.0.0.0"}})
 app.register_blueprint(app_views)
 
 
