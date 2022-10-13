@@ -15,6 +15,7 @@ import CatMatches from "./components/CatList";
 import RandomCatFact from "./components/RandomCatFact";
 import CatBreedInfo from "./components/CatBreedInfo";
 import PageNotFound from "./components/PageNotFound";
+import Footer from "./components/Footer";
 
 function App() {
   // const [title, setTitle] = useState(undefined);
@@ -61,6 +62,7 @@ function App() {
         <PageNotFound/>
         {/* <Route path="*" render={() => <div><img src='/images/404-cat.png'/></div>} /> */}
       </Switch>
+      <Footer/> 
     </div>
   );
 }
