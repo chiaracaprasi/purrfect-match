@@ -25,7 +25,8 @@ def match_scale(cat_list, attr, form_data):
     Return the cat_list without cats whose requirements are excess of the
     form_data
     """
-    cat_list[:] = [cat for cat in cat_list if cat[attr] <= form_data]
+    cat_list[:] = [cat for cat in cat_list
+                   if int(cat[attr]) <= int(form_data)]
     return cat_list
 
 
@@ -35,16 +36,19 @@ def match_other_pets(cat_list, attr, form_data):
     in cat_list with the passed in form_data from body response.
     Return the cat_list without cats that are incompatible with form_data
     """
+    other_animals = {'0': 'cat', '1': 'dog', '2': 'small'}
+
     if not form_data:
         return cat_list
     for cat in cat_list:
         for pet in form_data:
-            cat_list[:] = [cat for cat in cat_list if pet in cat['attr']]
+            cat_list[:] = [cat for cat in cat_list
+                           if other_animals[pet] in cat[attr]]
 
 
 match_funcs = {
     'indoor': match_bool,
-    'outdoor': match_bool,
+    'children': match_bool,
     'social': match_scale,
     'grooming': match_scale,
     'energy': match_scale,
@@ -65,7 +69,6 @@ def match_cats():
 
     body_requirements = ['indoor', 'children', 'otherAnimals',
                          'grooming', 'energy', 'social']
-    other_animals = {'0': 'cat', '1': 'dog', '2': 'small'}
 
     for req in body_requirements:
         if req not in body:
