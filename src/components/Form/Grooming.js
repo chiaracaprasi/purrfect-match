@@ -23,7 +23,7 @@ function Grooming({ formData, setFormData }) {
                 />
                 <img
                   src={require("./radio-icons/grooming-1.png")}
-                  alt="indoor"
+                  alt="low grooming"
                   className="icon"
                 />
                 <p>Not much time - less than 30 min a week</p>
@@ -43,7 +43,7 @@ function Grooming({ formData, setFormData }) {
                 />
                 <img
                   src={require("./radio-icons/grooming-2.png")}
-                  alt="indoor"
+                  alt="medium grooming"
                   className="icon"
                 />
                 <p>Some time - up to 1 hr a week</p>
@@ -64,7 +64,7 @@ function Grooming({ formData, setFormData }) {
                 />
                 <img
                   src={require("./radio-icons/grooming-3.png")}
-                  alt="indoor"
+                  alt="high grooming"
                   className="icon"
                 />
                 <p>Lots of time! - more than 1 hr a week</p>

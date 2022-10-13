@@ -23,7 +23,7 @@ function Energy({ formData, setFormData }) {
                 />
                 <img
                   src={require("./radio-icons/energy-1.png")}
-                  alt="indoor"
+                  alt="low energy"
                   className="icon"
                 />
                 <p>Not much time - less than 15 min a day</p>
@@ -43,7 +43,7 @@ function Energy({ formData, setFormData }) {
                 />
                 <img
                   src={require("./radio-icons/energy-2.png")}
-                  alt="indoor"
+                  alt="medium energy"
                   className="icon"
                 />
                 <p>Some time - 15 to 45 min a day</p>
@@ -63,7 +63,7 @@ function Energy({ formData, setFormData }) {
                 />
                 <img
                   src={require("./radio-icons/energy-3.png")}
-                  alt="indoor"
+                  alt="high energy"
                   className="icon"
                 />
                 <p>Lots of time! - more than 45 min a day</p>

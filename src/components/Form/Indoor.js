@@ -41,7 +41,7 @@ function Indoor({ formData, setFormData }) {
                 />
                 <img
                   src={require("./radio-icons/outdoor.png")}
-                  alt="indoor"
+                  alt="indoor/outdoor"
                   className="icon"
                 />
                 <p>

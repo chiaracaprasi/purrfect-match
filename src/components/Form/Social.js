@@ -21,7 +21,7 @@ function Social({ formData, setFormData }) {
                 />
                 <img
                   src={require("./radio-icons/social-1.png")}
-                  alt="indoor"
+                  alt="low social"
                   className="icon"
                 />
                 <p>More often away than at home - 1-2 days a week</p>
@@ -41,7 +41,7 @@ function Social({ formData, setFormData }) {
                 />
                 <img
                   src={require("./radio-icons/social-2.png")}
-                  alt="indoor"
+                  alt="medium social"
                   className="icon"
                 />
                 <p>A lot of the time - 3-4 days a week</p>
@@ -61,7 +61,7 @@ function Social({ formData, setFormData }) {
                 />
                 <img
                   src={require("./radio-icons/social-3.png")}
-                  alt="indoor"
+                  alt="high social"
                   className="icon"
                 />
                 <p>Most of the time - 5+ days a week</p>
