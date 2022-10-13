@@ -10,6 +10,7 @@ import { Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import About from "./components/About";
 import LandingPage from "./components/LandingPage";
+import Form from "./components/Form/Form";
 import SurveyForm from "./components/SurveyForm/SurveyForm";
 import CatMatches from "./components/CatList";
 import RandomCatFact from "./components/RandomCatFact";
