@@ -1,38 +1,54 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
-import Button from "react-bootstrap/Button";
 
 function Indoor({ formData, setFormData }) {
   return (
     <Card>
-      <Card.Header>What is your home like?</Card.Header>
+      <Card.Header>Which best describes your home and preference?</Card.Header>
       <Card.Body>
         <CardGroup>
-          <Card className="choice-card" as={Button}>
+          <Card className="choice-card">
             <Card.Body>
-              <input
-                type="radio"
-                value="1"
-                checked={formData.indoor === "1"}
-                onChange={(e) => {
-                  setFormData({ ...formData, indoor: e.target.value });
-                }}
-              />
-              No outdoor space, or on a busy street
+              <label>
+                <input
+                  type="radio"
+                  value="1"
+                  checked={formData.indoor === "1"}
+                  onChange={(e) => {
+                    setFormData({ ...formData, indoor: e.target.value });
+                  }}
+                />
+                <img
+                  src={require("./radio-icons/indoor.png")}
+                  alt="indoor"
+                  className="icon"
+                />
+                <p>I would prefer an indoor cat, or I live in a busy area</p>
+              </label>
             </Card.Body>
           </Card>
-          <Card className="choice-card" as={Button}>
+          <Card className="choice-card">
             <Card.Body>
-              <input
-                type="radio"
-                value="0"
-                checked={formData.indoor === "0"}
-                onChange={(e) => {
-                  setFormData({ ...formData, indoor: e.target.value });
-                }}
-              />
-              Lots of outdoor space and/or on a quiet street
+              <label>
+                <input
+                  type="radio"
+                  value="0"
+                  checked={formData.indoor === "0"}
+                  onChange={(e) => {
+                    setFormData({ ...formData, indoor: e.target.value });
+                  }}
+                />
+                <img
+                  src={require("./radio-icons/outdoor.png")}
+                  alt="indoor"
+                  className="icon"
+                />
+                <p>
+                  I can manage a cat that enjoys some time outdoors, and I live
+                  in quiet area
+                </p>
+              </label>
             </Card.Body>
           </Card>
         </CardGroup>

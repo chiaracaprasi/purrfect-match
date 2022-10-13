@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
+import "./Form.css";
 
 function Children({ formData, setFormData }) {
   return (
@@ -10,30 +11,46 @@ function Children({ formData, setFormData }) {
       </Card.Header>
       <Card.Body>
         <CardGroup>
-          <Card>
+          <Card className="choice-card">
             <Card.Body>
-              <input
-                type="radio"
-                value="1"
-                checked={formData.children === "1"}
-                onChange={(e) => {
-                  setFormData({ ...formData, children: e.target.value });
-                }}
-              />
-              Yes
+              <label>
+                <input
+                  type="radio"
+                  className="card-input-element"
+                  value="1"
+                  checked={formData.children === "1"}
+                  onChange={(e) => {
+                    setFormData({ ...formData, children: e.target.value });
+                  }}
+                />
+                <img
+                  src={require("./radio-icons/children.png")}
+                  alt="children"
+                  className="icon"
+                />
+                <p>Yes</p>
+              </label>
             </Card.Body>
           </Card>
-          <Card>
+          <Card className="choice-card">
             <Card.Body>
-              <input
-                type="radio"
-                value="0"
-                checked={formData.children === "0"}
-                onChange={(e) => {
-                  setFormData({ ...formData, children: e.target.value });
-                }}
-              />
-              No
+              <label>
+                <input
+                  type="radio"
+                  className="card-input-element"
+                  value="0"
+                  checked={formData.children === "0"}
+                  onChange={(e) => {
+                    setFormData({ ...formData, children: e.target.value });
+                  }}
+                />
+                <img
+                  src={require("./radio-icons/no-children.png")}
+                  alt="no children"
+                  className="icon"
+                />
+              </label>
+              <p>No</p>
             </Card.Body>
           </Card>
         </CardGroup>

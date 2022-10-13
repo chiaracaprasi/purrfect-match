@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
 function OtherAnimals({ formData, setFormData }) {
-  const animalOptions = ["Cat", "Dog", "Small Animals e.g. guinea pig, bird"];
+  const animalOptions = ["Cat", "Dog", "Small Animals"];
 
   const handleCheck = (index) => {
     const currentAnimals = formData.otherAnimals;
@@ -17,6 +17,16 @@ function OtherAnimals({ formData, setFormData }) {
     setFormData({ ...formData, otherAnimals: currentAnimals });
   };
 
+  const showImage = (index) => {
+    if (index === 0) {
+      console.log("hello");
+    } else if (index === 1) {
+      console.log("hi");
+    } else {
+      console.log("ok");
+    }
+  };
+
   return (
     <Card>
       <Card.Header>
@@ -28,15 +38,25 @@ function OtherAnimals({ formData, setFormData }) {
             <div key={index}>
               <Card>
                 <Card.Body>
-                  <input
-                    value={index}
-                    type="checkbox"
-                    checked={
-                      formData.otherAnimals.indexOf(index) === -1 ? false : true
-                    }
-                    onChange={() => handleCheck(index)}
-                  />
-                  {animal}
+                  <label>
+                    <input
+                      value={index}
+                      type="checkbox"
+                      checked={
+                        formData.otherAnimals.indexOf(index) === -1
+                          ? false
+                          : true
+                      }
+                      onChange={() => handleCheck(index)}
+                    />
+                    <img
+                      src={require("./radio-icons/other-cat.png")}
+                      alt="indoor"
+                      className="icon"
+                    />
+                    {showImage(index)}
+                    <p>{animal}</p>
+                  </label>
                 </Card.Body>
               </Card>
             </div>
