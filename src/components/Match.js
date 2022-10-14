@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Form from "./Form/Form";
 import { Spinner } from "react-bootstrap";
 import axios from "axios";
 import CatList from "./CatList";
+import Form from "./Form/Form";
 
 function Match() {
   const [cats, setCats] = useState(null);
