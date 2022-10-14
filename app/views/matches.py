@@ -91,8 +91,6 @@ def match_other_pets(cat_list, attr, form_data):
     if not form_data:
         return cat_list
     for cat in cat_list:
-        print(cat[attr])
-        print(form_data)
         for pet in form_data:
             cat_list[:] = [cat for cat in cat_list
                            if other_animals[pet] in cat[attr]]
@@ -115,18 +113,19 @@ def match_cats():
     Return all cats exactly matching the criteria provided or an empty
     dictionary if no matches found
     """
-    body = request.get_json()
-    if not body:
-        abort(400, description="Not a json")
-
-    # body = {
-        # 'indoor': '0',
-        # 'children': '1',
-        # 'grooming': '2',
-        # 'social': '3',
-        # 'energy': '1',
-        # 'otherAnimals': [0]
-    # }
+    if request.method == 'POST':
+        body = request.get_json()
+        if not body:
+            abort(400, description="Not a json")
+    else:
+        body = {
+            'indoor': '1',
+            'children': '1',
+            'grooming': '2',
+            'social': '3',
+            'energy': '1',
+            'otherAnimals': [0]
+        }
 
     body_requirements = ['indoor', 'children', 'otherAnimals',
                          'grooming', 'energy', 'social']
