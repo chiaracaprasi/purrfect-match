@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import Card from "react-bootstrap/Card";
 import { ProgressBar } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -11,7 +10,7 @@ import Grooming from "./Grooming";
 import Energy from "./Energy";
 import Social from "./Social";
 
-function Form() {
+function Form({ callbackSubmit }) {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     indoor: "1",
@@ -49,22 +48,6 @@ function Form() {
     }
   };
 
-  const handleSubmit = (e) => {
-    console.log(formData);
-    axios({
-      method: "post",
-      url: "http://68d0752c1ac8.1e732e4d.hbtn-cod.io:5000/app/cat_matches",
-      data: { ...formData },
-    })
-      .then((result) => {
-        console.log(result.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    alert(`Submitted`);
-  };
-
   const now =
     page === 0 ? 20 : page === 1 ? 40 : page === 2 ? 60 : page === 3 ? 80 : 100;
 
@@ -91,7 +74,7 @@ function Form() {
             variant="primary"
             onClick={() => {
               if (page === questions.length - 1) {
-                handleSubmit();
+                callbackSubmit(formData);
               } else {
                 setPage((currentPage) => currentPage + 1);
               }

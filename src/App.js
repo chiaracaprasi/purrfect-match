@@ -13,9 +13,9 @@ import LandingPage from "./components/LandingPage";
 import Form from "./components/Form/Form";
 import CatMatches from "./components/CatList";
 import RandomCatFact from "./components/RandomCatFact";
-import CatBreedInfo from "./components/CatBreedInfo";
 import PageNotFound from "./components/PageNotFound";
-import AllCats from "./components/AllCats"
+import AllCats from "./components/AllCats";
+import Match from ".components/Match";
 
 function App() {
   // const [title, setTitle] = useState(undefined);
@@ -47,8 +47,9 @@ function App() {
         <Route exact path="/about">
           <About />
         </Route>
-        <Route path="/form">
-          <Form />
+
+        <Route path="/match">
+          <Match />
         </Route>
         <Route path="/cat-matches">
           <CatMatches />

@@ -19,11 +19,11 @@ function OtherAnimals({ formData, setFormData }) {
 
   const showImage = (index) => {
     if (index === 0) {
-      console.log("hello");
+      console.log("cat");
     } else if (index === 1) {
-      console.log("hi");
+      console.log("dog");
     } else {
-      console.log("ok");
+      console.log("small");
     }
   };
 

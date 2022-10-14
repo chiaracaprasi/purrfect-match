@@ -4,7 +4,6 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./Navbar.css";
 
-
 function NavMenu() {
   return (
     <Navbar variant="dark" bg="primary" expand="lg">
@@ -24,7 +23,10 @@ function NavMenu() {
                 Something else
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item target='blank' href="https://github.com/chiaracaprasi/purrfect-match">
+              <NavDropdown.Item
+                target="blank"
+                href="https://github.com/chiaracaprasi/purrfect-match"
+              >
                 GitHub
               </NavDropdown.Item>
             </NavDropdown>
