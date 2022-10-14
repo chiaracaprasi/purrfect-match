@@ -17,13 +17,31 @@ function OtherAnimals({ formData, setFormData }) {
     setFormData({ ...formData, otherAnimals: currentAnimals });
   };
 
-  const showImage = (index) => {
+  const showAnimal = (index) => {
     if (index === 0) {
-      console.log("cat");
+      return (
+        <img
+          src={require("./radio-icons/other-cat.png")}
+          alt="indoor"
+          className="icon"
+        />
+      );
     } else if (index === 1) {
-      console.log("dog");
+      return (
+        <img
+          src={require("./radio-icons/other-dog.png")}
+          alt="indoor"
+          className="icon"
+        />
+      );
     } else {
-      console.log("small");
+      return (
+        <img
+          src={require("./radio-icons/other-small.png")}
+          alt="indoor"
+          className="icon"
+        />
+      );
     }
   };
 
@@ -49,12 +67,8 @@ function OtherAnimals({ formData, setFormData }) {
                       }
                       onChange={() => handleCheck(index)}
                     />
-                    <img
-                      src={require("./radio-icons/other-cat.png")}
-                      alt="indoor"
-                      className="icon"
-                    />
-                    {showImage(index)}
+
+                    {showAnimal(index)}
                     <p>{animal}</p>
                   </label>
                 </Card.Body>
