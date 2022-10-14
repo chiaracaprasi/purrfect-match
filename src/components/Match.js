@@ -12,11 +12,10 @@ function Match() {
   const handleSubmit = async (formData) => {
     setLoading(true);
     try {
-      const result = await axios({
-        method: "post",
-        url: "http://68d0752c1ac8.1e732e4d.hbtn-cod.io:5000/app/cat_matches",
-        data: { ...formData },
-      });
+      const result = await axios.post(
+        "http://68d0752c1ac8.1e732e4d.hbtn-cod.io:5000/app/cat_matches",
+        formData
+      );
       let allCats = [];
       for (let [key, value] of Object.entries(result.data)) {
         allCats.push(value[0]);
