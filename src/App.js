@@ -15,7 +15,7 @@ import CatMatches from "./components/CatList";
 import RandomCatFact from "./components/RandomCatFact";
 import PageNotFound from "./components/PageNotFound";
 import AllCats from "./components/AllCats";
-import Match from ".components/Match";
+import Match from "./components/Match";
 
 function App() {
   // const [title, setTitle] = useState(undefined);
@@ -54,12 +54,12 @@ function App() {
         <Route path="/cat-matches">
           <CatMatches />
         </Route>
-        <Route path="/cat-facts">
+        {/* <Route path="/cat-facts">
           <RandomCatFact />
         </Route>
         <Route path="/cat-breeds">
           <CatBreedInfo />
-        </Route>
+        </Route> */}
         <Route path="/all-cats">
           <AllCats />
         </Route>

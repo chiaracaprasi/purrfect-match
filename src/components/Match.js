@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Form from "./Form/Form";
 import { Spinner } from "react-bootstrap";
 import axios from "axios";
+import CatList from "./CatList";
 
 function Match() {
   const [cats, setCats] = useState(null);
   const [loading, setLoading] = useState(false);
+  const url = "http://68d0752c1ac8.1e732e4d.hbtn-cod.io:5000/app/cat_matches";
 
   const handleSubmit = async (formData) => {
     setLoading(true);
@@ -15,13 +17,18 @@ function Match() {
         url: "http://68d0752c1ac8.1e732e4d.hbtn-cod.io:5000/app/cat_matches",
         data: { ...formData },
       });
-      console.log(result.data);
+      let allCats = [];
+      for (let [key, value] of Object.entries(result.data)) {
+        allCats.push(value[0]);
+      }
+      setCats(allCats);
+
+      console.log(allCats);
     } catch (exceptionError) {
       console.log(exceptionError);
     } finally {
       setLoading(false);
     }
-    alert(`Submitted`);
   };
 
   if (loading === true) {
@@ -39,7 +46,7 @@ function Match() {
   if (cats === null) {
     return <Form callbackSubmit={handleSubmit} />;
   } else {
-    return <CatList />;
+    return <CatList cats={cats} />;
   }
 }
 
