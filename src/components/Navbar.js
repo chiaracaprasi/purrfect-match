@@ -2,28 +2,31 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import "./Navbar.css";
-
 
 function NavMenu() {
   return (
     <Navbar variant="dark" bg="primary" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">🐱 Purrfect Match</Navbar.Brand>
+        <Navbar.Brand href="/">🐱 Purrfect Match</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto" >
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+            <Nav.Link href="/cat-facts">Cat Facts</Nav.Link>
+            <NavDropdown title="About" id="basic-nav-dropdown">
+              <NavDropdown.Item href="about/team">The Team</NavDropdown.Item>
+              <NavDropdown.Item href="about/something">
+                The Project
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="about/somethingelse">
+                Something else
+              </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item
+                target="blank"
+                href="https://github.com/chiaracaprasi/purrfect-match"
+              >
+                GitHub
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
