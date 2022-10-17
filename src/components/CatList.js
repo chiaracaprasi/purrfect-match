@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import "./CatList.css";
+import axios from "axios";
 
 const CatList = ({ cats = [] }) => {
   const renderCatCard = (cat) => {
