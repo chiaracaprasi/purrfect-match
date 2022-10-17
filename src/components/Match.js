@@ -7,18 +7,17 @@ import Form from "./Form/Form";
 function Match() {
   const [cats, setCats] = useState(null);
   const [loading, setLoading] = useState(false);
-  const url = "http://68d0752c1ac8.1e732e4d.hbtn-cod.io:5000/app/cat_matches";
 
   const handleSubmit = async (formData) => {
     setLoading(true);
     try {
       const result = await axios.post(
-        "http://68d0752c1ac8.1e732e4d.hbtn-cod.io:5000/app/cat_matches",
+        "http://b3549e1f1849.244fe182.hbtn-cod.io:5000/app/cat_matches",
         formData
       );
       let matchedCats = [];
       for (let [key, value] of Object.entries(result.data)) {
-        allCats.push(value[0]);
+        matchedCats.push(value[0]);
       }
       setCats(matchedCats);
 
