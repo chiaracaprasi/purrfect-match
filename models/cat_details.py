@@ -14,7 +14,7 @@ class CatDetails(BaseModel, Base):
     __tablename__ = 'cat_details'
     name = Column(String(50), nullable=False)
     dob = Column(Date, default=date(2000, 1, 1), nullable=False)
-    sex = Column(Enum('f', 'm', name='gender_enum'), nullable=False)
+    sex = Column(Enum('female', 'male', name='gender_enum'), nullable=False)
     breed = Column(String(50), nullable=False)
     photo = Column(String(500), nullable=False)
     blurb = Column(MEDIUMTEXT(), nullable=False)
