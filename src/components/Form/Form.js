@@ -49,7 +49,7 @@ function Form({ callbackSubmit }) {
   };
 
   const now =
-    page === 0 ? 20 : page === 1 ? 40 : page === 2 ? 60 : page === 3 ? 80 : 100;
+    page === 0 ? 0 : page === 1 ? 25 : page === 2 ? 50 : page === 3 ? 75 : 100;
 
   return (
     <Card style={{ width: "40%" }} className="mx-auto">
