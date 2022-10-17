@@ -1,14 +1,12 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import "./CatList.css";
-import axios from "axios";
 
 const CatList = ({ cats = [] }) => {
+  console.log(cats);
   const renderCatCard = (cat) => {
-    console.log(cat);
-
     return (
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "16rem" }} key={cat.id}>
         <Card.Img className="img-thumbnail" variant="top" src={cat.photo} />
         <Card.Body>
           <Card.Title>{cat.name}</Card.Title>
@@ -29,8 +27,8 @@ const CatList = ({ cats = [] }) => {
 
   return (
     <>
-      <h1>Your Purrfect Matches</h1>
-      <div class="d-flex justify-content-between flex-wrap p-5">
+      <h1>You have {cats.length} matches</h1>
+      <div className="d-flex justify-content-between flex-wrap p-5">
         {listItems}
       </div>
     </>
