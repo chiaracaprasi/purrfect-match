@@ -7,7 +7,12 @@ const CatList = ({ cats = [] }) => {
     console.log(cat);
     return (
       <Card style={{ width: "18rem" }}>
-        <Card.Img className="img-thumbnail" variant="top" src={cat.photo} />
+        <Card.Img
+          className="img-thumbnail"
+          variant="top"
+          src={cat.photo[url]}
+        />
+
         <Card.Body>
           <Card.Title>{cat.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
