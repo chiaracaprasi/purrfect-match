@@ -1,6 +1,5 @@
-import Card from "react-bootstrap/Card";
-import { Button } from "react-bootstrap";
-import React, { useState } from "react";
+import React from "react";
+import { Button, Card } from "react-bootstrap";
 import "./CatList.css";
 
 const CatList = ({ cats = [] }) => {
@@ -13,6 +12,7 @@ const CatList = ({ cats = [] }) => {
           variant="top"
           src={cat.photo[url]}
         />
+
         <Card.Body>
           <Card.Title>{cat.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
