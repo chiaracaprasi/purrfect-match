@@ -16,13 +16,13 @@ function Match() {
         "http://68d0752c1ac8.1e732e4d.hbtn-cod.io:5000/app/cat_matches",
         formData
       );
-      let allCats = [];
+      let matchedCats = [];
       for (let [key, value] of Object.entries(result.data)) {
         allCats.push(value[0]);
       }
-      setCats(allCats);
+      setCats(matchedCats);
 
-      console.log(allCats);
+      console.log(matchedCats);
     } catch (exceptionError) {
       console.log(exceptionError);
     } finally {
