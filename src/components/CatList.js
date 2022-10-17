@@ -8,7 +8,11 @@ const CatList = ({ cats = [] }) => {
     console.log(cat);
     return (
       <Card style={{ width: "18rem" }}>
-        <Card.Img  className="img-thumbnail" variant="top" src={cat.photo} />
+        <Card.Img
+          className="img-thumbnail"
+          variant="top"
+          src={cat.photo[url]}
+        />
         <Card.Body>
           <Card.Title>{cat.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -17,9 +21,7 @@ const CatList = ({ cats = [] }) => {
           <Card.Subtitle className="mb-2 text-muted">
             Breed: {cat.breed}
           </Card.Subtitle>
-          <Card.Text>
-            About: {cat.blurb}
-          </Card.Text>
+          <Card.Text>About: {cat.blurb}</Card.Text>
           <Button variant="secondary">Match</Button>
         </Card.Body>
       </Card>
