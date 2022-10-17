@@ -6,7 +6,7 @@ function Footer() {
     <>
       <div className="fixed-bottom border-0">
         <Card>
-          <Card.Body className="pb-1 bg-primary">
+          <Card.Body className="pb-1 bg-footer">
             Made with ❤️ 
           </Card.Body>
         </Card>
