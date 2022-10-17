@@ -11,12 +11,12 @@ const CatList = ({ cats = [] }) => {
         <Card.Body>
           <Card.Title>{cat.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            Age: {cat.dob} Gender: {cat.sex}
+            Age: {cat.dob} <br></br> Gender: {cat.sex}
           </Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">
             Breed: {cat.breed}
           </Card.Subtitle>
-          <Card.Text>About: {cat.blurb}</Card.Text>
+          <Card.Text>{cat.blurb}</Card.Text>
           <Button variant="secondary">Match</Button>
         </Card.Body>
       </Card>
