@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  nginx:
+    image: nginx
+    container_name: purrfect_match_nginx
+    ports:
+      - "8080:80"
+
+  flask:
+    image: python-flask
+    container_name: purrfect_match_flask
+    ports:
+      - "5001:5000"
+    command: ["python3", "-m", "api.app"]
+    # command: ["python3", "-m" , "flask", "--app", "app.py", "--debug", "run", "--host=0.0.0.0"]
+    volumes:
+      - ./api:/api
+    environment:
+      MYSQL_DB_URL: "mysql+mysqldb://root:password@mysql:3306/mysql?charset=utf8mb4"
+
+  mysql:
+    image: mysql:8.0.30
+    container_name: purrfect_match_mysql
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql:ro
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 5003:8080
+
+volumes:
+  db_data:
