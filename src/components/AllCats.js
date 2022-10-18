@@ -26,7 +26,7 @@ const AllCats = () => {
 
   return (
     <>
-      <h1 class="p-4">Cats</h1>
+      <h1 className="p-4 fs-2 text">All Cats</h1>
       <div className="min-vh-50">
         {isLoading ? (
           <Spinner
