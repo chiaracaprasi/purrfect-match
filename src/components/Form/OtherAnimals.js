@@ -22,7 +22,7 @@ function OtherAnimals({ formData, setFormData }) {
       return (
         <img
           src={require("./radio-icons/other-cat.png")}
-          alt="indoor"
+          alt="cat"
           className="icon"
         />
       );
@@ -30,7 +30,7 @@ function OtherAnimals({ formData, setFormData }) {
       return (
         <img
           src={require("./radio-icons/other-dog.png")}
-          alt="indoor"
+          alt="dog"
           className="icon"
         />
       );
@@ -38,7 +38,7 @@ function OtherAnimals({ formData, setFormData }) {
       return (
         <img
           src={require("./radio-icons/other-small.png")}
-          alt="indoor"
+          alt="other small animals"
           className="icon"
         />
       );
