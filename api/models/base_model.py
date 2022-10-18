@@ -41,4 +41,4 @@ class BaseModel:
         class, or all objects if cls is None
         returns a dictionary with keys and objects as values
         """
-        return models.db.all(cls)
+        return api.models.db.all(cls)
