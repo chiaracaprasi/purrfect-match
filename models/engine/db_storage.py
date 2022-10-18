@@ -58,6 +58,22 @@ class DBStorage:
                 objs = self.__session.query(classes[clss]).all()
         return objs
 
+    def match(self, cls, **form_data):
+        """
+        Query on the current database session to retrieve all cats
+        matching the form_data passed in.
+        Return all matching cats or an empty array if no matches found
+        """
+        energy = form_data['energy']
+        grooming = form_data['grooming']
+        social = form_data['social']
+
+        return self.__session.query(cls).\
+            filter(cls.energy <= energy).\
+            filter(cls.grooming <= grooming).\
+            filter(cls.social <= social).\
+            all()
+
     def get(self, cls, id):
         """retrieve one object with matching id"""
         try:
@@ -71,10 +87,4 @@ class DBStorage:
 
     def update(self, obj=None):
         """update an object in current database session"""
-        pass
-
-    def count(self, cls=None):
-        """retrieve number of objects in the db - limited
-        by class if cls provided
-        """
         pass

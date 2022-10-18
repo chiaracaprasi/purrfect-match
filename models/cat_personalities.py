@@ -25,10 +25,85 @@ class CatPersonalities(BaseModel, Base):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+    @staticmethod
+    def match_bool(cat_list, attr, form_data):
+        """
+        Compare the boolean attributes for each instance of CatPersonality
+        in cat_list with the passed in form_data.
+        Return cat_list after removing cats that don't match
+        """
+        if form_data == '0':
+            return cat_list
+        cat_list[:] = [cat for cat in cat_list if cat[attr] is True]
+        return cat_list
+
+    @staticmethod
+    def match_other_pets(cat_list, attr, form_data):
+        """
+        Compare the 'other_animals' attribute for each instance of
+        CatPersonality in cat_list with the passed in form_data from
+        body response.
+        Return the cat_list without cats that are incompatible with form_data
+        """
+        other_animals = {0: 'cat', 1: 'dog', 2: 'small'}
+
+        if not form_data:
+            return cat_list
+        for cat in cat_list:
+            for pet in form_data:
+                cat_list[:] = [cat for cat in cat_list
+                               if other_animals[pet] in cat[attr]]
+        return cat_list
+
+    match_funcs = {
+            'indoor': match_bool,
+            'children': match_bool,
+            'other_animals': match_other_pets
+            }
+
     @classmethod
-    def get(cls, id):
+    def match(cls, form_data):
+        """
+        Query the database to retrieve cats matching form_data keys:
+        energy, grooming and social.
+        Filter query results (if any) based on form_data keys:
+        children, indoor and other_animals
+        Return an array of matching CatPersonality objects or an empty array
+        """
+        # query db for cats matching energy, grooming and social requirements
+        results = models.db.match(cls, form_data)
+        if not results:
+            return []
+
+        # filter out cats that don't match indoor, children and other_animals
+        # requirements
+        for key in form_data:
+            if key in cls.match_funcs:
+                if results:
+                    results = cls.match_funcs[key](
+                        results, key, form_data[key])
+                else:
+                    return []
+        return results
+
+    @classmethod
+    def get_cat_details(cls, id):
         """
         retrieves a CatDetails object from storage if matching id
         is found. Returns object or None if no match found
         """
-        return models.storage.get(CatDetails, id)
+        return models.db.get(CatDetails, id)
+
+
+"""
+def match_scale(cat_list, attr, form_data):
+
+    Compare the scale attributes for each instance of CatPersonality
+    in cat_list with the passed in form_data from body response.
+    Return the cat_list without cats whose requirements are excess of the
+    form_data
+
+    cat_list[:] = [cat for cat in cat_list
+                   if int(cat[attr]) <= int(form_data)]
+    return cat_list
+"""

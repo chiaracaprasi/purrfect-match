@@ -40,12 +40,8 @@ class BaseModel:
         """adds a new instance or saves changes to an existing
         instance to current database session
         """
-        models.storage.new(self)
-        models.storage.save()
-
-    def delete(self):
-        """delete an instance from the current database session"""
-        storage.delete(self)
+        models.db.new(self)
+        models.db.save()
 
     def __str__(self):
         """string representation of the BaseModel class"""
@@ -68,4 +64,4 @@ class BaseModel:
         class, or all objects if cls is None
         returns a dictionary with keys and objects as values
         """
-        return models.storage.all(cls)
+        return models.db.all(cls)

@@ -3,6 +3,5 @@ from flask import Blueprint
 
 app_views = Blueprint("app_views", __name__, url_prefix="/app")
 
-from app.views.all_cats import *
+from app.views.cats import *
 from app.views.index import *
-from app.views.matches import *
