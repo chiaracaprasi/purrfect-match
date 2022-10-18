@@ -31,19 +31,6 @@ class DBStorage:
         Session = scoped_session(sess_factory)
         self.__session = Session
 
-    def new(self, obj):
-        """add an object to the current database session"""
-        self.__session.add(obj)
-
-    def save(self):
-        """commit all changes of the current database session"""
-        self.__session.commit()
-
-    def delete(self, obj=None):
-        """delete an object from the current database session"""
-        if obj:
-            self.__session.delete(obj)
-
     def close(self):
         """close the session attached to private attribute __session"""
         self.__session.remove()
@@ -84,7 +71,3 @@ class DBStorage:
                         return obj
         except Exception:
             return None
-
-    def update(self, obj=None):
-        """update an object in current database session"""
-        pass
