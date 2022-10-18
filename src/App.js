@@ -5,12 +5,14 @@ import { Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import About from "./components/About";
 import AllCats from "./components/AllCats";
-import CatMatches from "./components/MatchedCats";
+import CatMatches from "./components/Matched/MatchedCats";
 import LandingPage from "./components/LandingPage";
 import Match from "./components/Match";
 import NavMenu from "./components/Navbar";
 import PageNotFound from "./components/PageNotFound";
 import RandomCatFact from "./components/RandomCatFact";
+import Adopt from "./components/Matched/Adopt";
+import Personality from "./components/Matched/Personality";
 
 function App() {
   return (
@@ -23,12 +25,17 @@ function App() {
         <Route exact path="/about">
           <About />
         </Route>
-
         <Route path="/match">
           <Match />
         </Route>
-        <Route path="/cat-matches">
-          <CatMatches />
+        <Route path="/match">
+          <Match />
+        </Route>
+        <Route path="/Matched/Adopt">
+          <Adopt />
+        </Route>
+        <Route path="/Matched/Personality">
+          <Personality />
         </Route>
         <Route path="/cat-facts">
           <RandomCatFact />

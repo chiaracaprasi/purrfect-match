@@ -1,6 +1,8 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "./MatchedCats.css";
+import Adopt from "./Adopt";
+import Personality from "./Personality";
 
 const MatchedCats = ({ cats = [] }) => {
   console.log(cats);
@@ -18,9 +20,8 @@ const MatchedCats = ({ cats = [] }) => {
           </Card.Subtitle>
           <Card.Text>{cat.blurb}</Card.Text>
           <Card.Footer>
-            <Button variant="secondary" href="#">
-              Adopt
-            </Button>
+            <Personality />
+            <Adopt name={cat.name} photo={cat.photo} />
           </Card.Footer>
         </Card.Body>
       </Card>

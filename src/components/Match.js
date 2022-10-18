@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Spinner } from "react-bootstrap";
 import axios from "axios";
-import MatchedCats from "./MatchedCats";
+import MatchedCats from "./Matched/MatchedCats";
 import Form from "./Form/Form";
 
 function Match() {

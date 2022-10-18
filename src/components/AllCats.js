@@ -1,6 +1,6 @@
 import { Spinner } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
-import MatchedCats from "./MatchedCats";
+import MatchedCats from "./Matched/MatchedCats";
 import axios from "axios";
 
 const AllCats = () => {

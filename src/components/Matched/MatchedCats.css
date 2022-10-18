@@ -8,6 +8,14 @@ ul > li {
   object-fit: cover;
 }
 
+.thumbnail {
+  width: 6vw;
+  height: 6vw;
+  float: rounded float-left;
+  object-fit: cover;
+  margin: mr-2;
+}
+
 card-footer {
   height: 10px;
 }
