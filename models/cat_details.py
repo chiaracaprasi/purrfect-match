@@ -22,7 +22,8 @@ class CatDetails(BaseModel, Base):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-    def calculate_age(self, dob):
+    @classmethod
+    def calculate_age(cls, dob):
         """
         Convert datetime object from a CatPersonality instance
         into an age in years and months in string format

@@ -24,8 +24,8 @@ def all_cats():
         id_key = cat_personality['details_id']
         matches_dict[id_key] = []
         cat_details = CatPersonalities.get_cat_details(
-            cat_personality['details_id']
-            ).to_dict()
+            cat_personality['details_id'])
+        cat_details = cat_details.to_dict()
         if cat_details:
             cat_details['dob'] = cat_details.calculate_age(cat_details['dob'])
             matches_dict[id_key] += [cat_details, cat_personality]
@@ -45,12 +45,12 @@ def match_cats():
             abort(400, description="Not a json")
     else:
         body = {
-            'indoor': '1',
+            'indoor': '0',
             'children': '1',
             'grooming': '2',
-            'social': '3',
+            'social': '2',
             'energy': '1',
-            'otherAnimals': [0]
+            'otherAnimals': [0, 1]
         }
 
     body_requirements = ['indoor', 'children', 'otherAnimals',
@@ -71,16 +71,17 @@ def match_cats():
     matched_personalities = CatPersonalities.match(body)
     if not matched_personalities:
         return {}
-    for cat in matched_personalities:
-        cat = cat.to_dict()
 
     matched_cats = {}
     for cat_personality in matched_personalities:
         id_key = cat_personality['details_id']
         matched_cats[id_key] = []
         cat_details = CatPersonalities.get_cat_details(
-            cat_personality['details_id']).to_dict()
+            cat_personality['details_id'])
         if cat_details:
-            cat_details['dob'] = cat_details.calculate_age(cat_details['dob'])
+            cat_details = cat_details.to_dict()
+            print(cat_details)
+            print(dir(cat_details))
+            cat_details['dob'] = CatDetails.calculate_age(cat_details['dob'])
             matched_cats[id_key] += [cat_details, cat_personality]
     return jsonify(matched_cats)

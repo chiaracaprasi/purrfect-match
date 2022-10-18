@@ -56,9 +56,9 @@ class CatPersonalities(BaseModel, Base):
         return cat_list
 
     match_funcs = {
-            'indoor': match_bool,
-            'children': match_bool,
-            'other_animals': match_other_pets
+            'indoor': match_bool.__func__,
+            'children': match_bool.__func__,
+            'other_animals': match_other_pets.__func__
             }
 
     @classmethod
@@ -75,16 +75,22 @@ class CatPersonalities(BaseModel, Base):
         if not results:
             return []
 
+        cat_list = []
+        for cat in results:
+            cat = cat.to_dict()
+            cat['other_animals'] = list(cat['other_animals'])
+            cat_list.append(cat)
+
         # filter out cats that don't match indoor, children and other_animals
         # requirements
         for key in form_data:
             if key in cls.match_funcs:
-                if results:
-                    results = cls.match_funcs[key](
-                        results, key, form_data[key])
+                if cat_list:
+                    cat_list = cls.match_funcs[key](
+                        cat_list, key, form_data[key])
                 else:
                     return []
-        return results
+        return cat_list
 
     @classmethod
     def get_cat_details(cls, id):
