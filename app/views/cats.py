@@ -23,10 +23,11 @@ def all_cats():
             )
         id_key = cat_personality['details_id']
         matches_dict[id_key] = []
-        cat_details = CatPersonalities.get(
+        cat_details = CatPersonalities.get_cat_details(
             cat_personality['details_id']
             ).to_dict()
         if cat_details:
+            cat_details['dob'] = cat_details.calculate_age(cat_details['dob'])
             matches_dict[id_key] += [cat_details, cat_personality]
     return jsonify(matches_dict)
 

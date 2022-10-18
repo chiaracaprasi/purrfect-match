@@ -58,7 +58,7 @@ class DBStorage:
                 objs = self.__session.query(classes[clss]).all()
         return objs
 
-    def match(self, cls, **form_data):
+    def match(self, cls, form_data):
         """
         Query on the current database session to retrieve all cats
         matching the form_data passed in.
