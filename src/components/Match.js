@@ -15,11 +15,7 @@ function Match() {
         "http://b3549e1f1849.244fe182.hbtn-cod.io:5000/app/cat_matches",
         formData
       );
-      let matchedCats = [];
-      for (let [key, value] of Object.entries(result.data)) {
-        matchedCats.push(value[0]);
-      }
-      setCats(matchedCats);
+      setCats(result.data);
     } catch (exceptionError) {
       console.log(exceptionError);
     } finally {

@@ -5,36 +5,43 @@ import Adopt from "./Adopt";
 import Personality from "./Personality";
 
 const MatchedCats = ({ cats = [] }) => {
-  console.log(cats);
+  let catObjects = [];
+  for (let [key, value] of Object.entries(cats)) {
+    catObjects.push(value);
+  }
+
   const renderCatCard = (cat) => {
+    console.log(cat[0].name);
+    console.log("cat:" + cat);
+
     return (
-      <Card style={{ width: "16rem" }} key={cat.id}>
-        <Card.Img className="img-thumbnail" variant="top" src={cat.photo} />
+      <Card style={{ width: "16rem" }} key={cat[0].id}>
+        <Card.Img className="img-thumbnail" variant="top" src={cat[0].photo} />
         <Card.Body>
-          <Card.Title>{cat.name}</Card.Title>
+          <Card.Title>{cat[0].name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            Age: {cat.dob} <br></br> Gender: {cat.sex}
+            Age: {cat[0].dob} <br></br> Gender: {cat[0].sex}
           </Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">
-            Breed: {cat.breed}
+            Breed: {cat[0].breed}
           </Card.Subtitle>
-          <Card.Text>{cat.blurb}</Card.Text>
+          <Card.Text>{cat[0].blurb}</Card.Text>
           <Card.Footer>
-            <Personality />
-            <Adopt name={cat.name} photo={cat.photo} />
+            <Personality cat={cat} />
+            <Adopt name={cat[0].name} photo={cat[0].photo} />
           </Card.Footer>
         </Card.Body>
       </Card>
     );
   };
 
-  const listItems = cats.map((cat) => renderCatCard(cat));
+  const catCard = catObjects.map((cat) => renderCatCard(cat));
 
   return (
     <>
-      <h1>You have {cats.length} matches</h1>
+      <h1>You have {catObjects.length} matches</h1>
       <div className="d-flex justify-content-between flex-wrap p-5">
-        {listItems}
+        {catCard}
       </div>
     </>
   );
