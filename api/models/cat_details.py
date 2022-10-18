@@ -36,7 +36,7 @@ class CatDetails(BaseModel, Base):
 
         if today.month < dob.month:
             years -= 1
-            months = dob.month - today.month
+            months = (12 - dob.month) + today.month
         else:
             months = today.month - dob.month
 
