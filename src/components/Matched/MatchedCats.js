@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import "./CatList.css";
+import "./MatchedCats.css";
 
-const CatList = ({ cats = [] }) => {
+const MatchedCats = ({ cats = [] }) => {
   console.log(cats);
   const renderCatCard = (cat) => {
     return (
@@ -17,7 +17,11 @@ const CatList = ({ cats = [] }) => {
             Breed: {cat.breed}
           </Card.Subtitle>
           <Card.Text>{cat.blurb}</Card.Text>
-          <Button variant="secondary">Match</Button>
+          <Card.Footer>
+            <Button variant="secondary" href="#">
+              Adopt
+            </Button>
+          </Card.Footer>
         </Card.Body>
       </Card>
     );
@@ -35,4 +39,4 @@ const CatList = ({ cats = [] }) => {
   );
 };
 
-export default CatList;
+export default MatchedCats;

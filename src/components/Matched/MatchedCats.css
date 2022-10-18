@@ -7,3 +7,7 @@ ul > li {
   height: 15vw;
   object-fit: cover;
 }
+
+card-footer {
+  height: 10px;
+}

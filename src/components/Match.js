@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Spinner } from "react-bootstrap";
 import axios from "axios";
-import CatList from "./CatList";
+import MatchedCats from "./MatchedCats";
 import Form from "./Form/Form";
 
 function Match() {
@@ -42,7 +42,7 @@ function Match() {
   if (cats === null) {
     return <Form callbackSubmit={handleSubmit} />;
   } else {
-    return <CatList cats={cats} />;
+    return <MatchedCats cats={cats} />;
   }
 }
 

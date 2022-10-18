@@ -1,6 +1,6 @@
 import { Spinner } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
-import CatList from "./CatList";
+import MatchedCats from "./MatchedCats";
 import axios from "axios";
 
 const AllCats = () => {
@@ -37,7 +37,7 @@ const AllCats = () => {
             aria-hidden="true"
           />
         ) : (
-          <CatList cats={cats} />
+          <MatchedCats cats={cats} />
         )}
       </div>
     </>
