@@ -20,8 +20,6 @@ function Match() {
         matchedCats.push(value[0]);
       }
       setCats(matchedCats);
-
-      console.log(matchedCats);
     } catch (exceptionError) {
       console.log(exceptionError);
     } finally {
