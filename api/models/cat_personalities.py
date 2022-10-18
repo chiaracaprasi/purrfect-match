@@ -4,8 +4,8 @@ Defines class CatPersonalities
 """
 
 import api.models
-from api.models.base_model import Base, BaseModel
-from api.models.cat_details import CatDetails
+from .base_model import Base, BaseModel
+from .cat_details import CatDetails
 from sqlalchemy import Boolean, Column, Enum, ForeignKey, Integer
 from sqlalchemy.dialects.mysql import SET
 
@@ -68,7 +68,7 @@ class CatPersonalities(BaseModel, Base):
         Return an array of matching CatPersonality objects or an empty array
         """
         # query db for cats matching energy, grooming and social requirements
-        results = models.db.match(cls, form_data)
+        results = api.models.db.match(cls, form_data)
         if not results:
             return []
 
@@ -95,4 +95,4 @@ class CatPersonalities(BaseModel, Base):
         retrieves a CatDetails object from storage if matching id
         is found. Returns object or None if no match found
         """
-        return models.db.get(CatDetails, id)
+        return api.models.db.get(CatDetails, id)
