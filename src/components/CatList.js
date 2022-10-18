@@ -6,7 +6,7 @@ const CatList = ({ cats = [] }) => {
   console.log(cats);
   const renderCatCard = (cat) => {
     return (
-      <Card style={{ width: "16rem" }} key={cat.id}>
+      <Card style={{ width: "16rem" }} key={cat.id} className="mb-4">
         <Card.Img className="img-thumbnail" variant="top" src={cat.photo} />
         <Card.Body>
           <Card.Title>{cat.name}</Card.Title>
