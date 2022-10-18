@@ -2,7 +2,7 @@
 """
 create a variable app, instance of Flask
 """
-from app.views import app_views
+from api.views import app_views
 from flask import Flask
 from flask_cors import CORS
 from models import db

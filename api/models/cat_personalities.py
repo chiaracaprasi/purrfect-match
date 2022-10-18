@@ -3,9 +3,9 @@
 Defines class CatPersonalities
 """
 
-import models
-from models.base_model import Base, BaseModel
-from models.cat_details import CatDetails
+import api.models
+from api.models.base_model import Base, BaseModel
+from api.models.cat_details import CatDetails
 from sqlalchemy import Boolean, Column, Enum, ForeignKey, Integer
 from sqlalchemy.dialects.mysql import SET
 
@@ -21,9 +21,6 @@ class CatPersonalities(BaseModel, Base):
     children = Column(Boolean, nullable=False, default=False)
     indoor = Column(Boolean, nullable=False, default=True)
     details_id = Column(Integer, ForeignKey('cat_details.id'), nullable=False)
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
 
     @staticmethod
     def match_bool(cat_list, attr, form_data):
@@ -99,17 +96,3 @@ class CatPersonalities(BaseModel, Base):
         is found. Returns object or None if no match found
         """
         return models.db.get(CatDetails, id)
-
-
-"""
-def match_scale(cat_list, attr, form_data):
-
-    Compare the scale attributes for each instance of CatPersonality
-    in cat_list with the passed in form_data from body response.
-    Return the cat_list without cats whose requirements are excess of the
-    form_data
-
-    cat_list[:] = [cat for cat in cat_list
-                   if int(cat[attr]) <= int(form_data)]
-    return cat_list
-"""

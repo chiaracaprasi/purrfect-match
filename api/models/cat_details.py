@@ -4,7 +4,7 @@ Defines class CatDetails
 """
 
 from datetime import date
-from models.base_model import Base, BaseModel
+from api.models.base_model import Base, BaseModel
 from sqlalchemy import Column, Date, Enum, String
 from sqlalchemy.dialects.mysql import MEDIUMTEXT
 
@@ -18,9 +18,6 @@ class CatDetails(BaseModel, Base):
     breed = Column(String(50), nullable=False)
     photo = Column(String(500), nullable=False)
     blurb = Column(MEDIUMTEXT(), nullable=False)
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
 
     @classmethod
     def calculate_age(cls, dob):
