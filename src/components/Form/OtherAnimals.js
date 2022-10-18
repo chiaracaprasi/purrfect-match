@@ -54,7 +54,7 @@ function OtherAnimals({ formData, setFormData }) {
         <CardGroup>
           {animalOptions.map((animal, index) => (
             <div key={index}>
-              <Card>
+              <Card className="choice-card">
                 <Card.Body>
                   <label>
                     <input

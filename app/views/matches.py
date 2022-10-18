@@ -158,7 +158,7 @@ def match_cats():
         cat_details = CatPersonalities.get(
             cat_personality['details_id']).to_dict()
         if cat_details:
-            rename_gender(cat_details)
+            # rename_gender(cat_details)
             cat_details['dob'] = calculate_age(cat_details['dob'])
             matches_dict[id_key] += [cat_details, cat_personality]
     return jsonify(matches_dict)
