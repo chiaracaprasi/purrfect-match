@@ -22,7 +22,7 @@ const Adopt = (props) => {
           <Modal.Title>Contact Us</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={props.photo} className="small" />
+          <img src={props.photo} alt="" className="small" />
           Please call us on 03 9595 9595 to arrange a time to meet your purrfect
           match <b>{props.name}</b>!
         </Modal.Body>

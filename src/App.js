@@ -5,7 +5,6 @@ import { Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
 import About from "./components/About";
 import AllCats from "./components/AllCats";
-import CatMatches from "./components/Matched/MatchedCats";
 import LandingPage from "./components/LandingPage";
 import Match from "./components/Match";
 import NavMenu from "./components/Navbar";

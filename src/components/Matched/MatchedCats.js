@@ -39,7 +39,7 @@ const MatchedCats = ({ cats = [] }) => {
 
   return (
     <>
-      <h1>You have {catObjects.length} matches</h1>
+      <h1>You have {catObjects.length} matches!</h1>
       <div className="d-flex justify-content-between flex-wrap p-5">
         {catCard}
       </div>
