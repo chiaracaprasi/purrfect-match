@@ -11,8 +11,7 @@ const MatchedCats = ({ cats = [] }) => {
   }
 
   const renderCatCard = (cat) => {
-    console.log(cat[0].name);
-    console.log("cat:" + cat);
+    const shortBlurb = cat[0].blurb.substring(0, 40);
 
     return (
       <Card style={{ width: "16rem" }} key={cat[0].id}>
@@ -20,12 +19,12 @@ const MatchedCats = ({ cats = [] }) => {
         <Card.Body>
           <Card.Title>{cat[0].name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            Age: {cat[0].dob} <br></br> Gender: {cat[0].sex}
+            Age: {cat[0].age} <br></br> Gender: {cat[0].sex}
           </Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">
             Breed: {cat[0].breed}
           </Card.Subtitle>
-          <Card.Text>{cat[0].blurb}</Card.Text>
+          <Card.Text>{shortBlurb}...</Card.Text>
           <Card.Footer>
             <Personality cat={cat} />
             <Adopt name={cat[0].name} photo={cat[0].photo} />
