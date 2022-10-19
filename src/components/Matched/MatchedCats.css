@@ -13,8 +13,9 @@ ul > li {
   height: 10rem;
   float: left;
   object-fit: cover;
-  margin: mr-2;
   border-radius: 15%;
+  border: 0.1rem solid #81b1b3;
+  padding: 0.3rem;
 }
 
 .small-icon {
@@ -27,6 +28,9 @@ ul > li {
   height: 20rem;
   object-fit: cover;
   max-width: 100%;
+  border-radius: 8%;
+  border: 0.1rem solid #81b1b3;
+  padding: 0.4rem;
 }
 
 card-footer {

@@ -161,7 +161,7 @@ const Personality = (props) => {
           <img
             src={props.cat[0].photo}
             alt=""
-            className="large rounded mx-auto d-block"
+            className="large mx-auto d-block"
           />
           <p>{props.cat[0].blurb}</p>
 
@@ -178,7 +178,7 @@ const Personality = (props) => {
             looking my best.
           </p>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="border-0 bg-transparent">
           <Button variant="secondary" onClick={() => setShow(false)}>
             Close
           </Button>
