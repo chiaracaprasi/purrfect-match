@@ -4,7 +4,7 @@ ul > li {
 
 .card-img-top {
   width: 88%;
-  height: 15vw;
+  height: 10rem;
   object-fit: cover;
 }
 
@@ -22,9 +22,10 @@ ul > li {
 }
 
 .large {
-  width: 27rem;
+  width: 25rem;
   height: 20rem;
   object-fit: cover;
+  max-width: 100%;
 }
 
 card-footer {
