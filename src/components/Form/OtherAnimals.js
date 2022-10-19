@@ -21,7 +21,7 @@ function OtherAnimals({ formData, setFormData }) {
     if (index === 0) {
       return (
         <img
-          src={require("./radio-icons/other-cat.png")}
+          src={require("../icons/other-cat.png")}
           alt="indoor"
           className="icon"
         />
@@ -29,7 +29,7 @@ function OtherAnimals({ formData, setFormData }) {
     } else if (index === 1) {
       return (
         <img
-          src={require("./radio-icons/other-dog.png")}
+          src={require("../icons/other-dog.png")}
           alt="indoor"
           className="icon"
         />
@@ -37,7 +37,7 @@ function OtherAnimals({ formData, setFormData }) {
     } else {
       return (
         <img
-          src={require("./radio-icons/other-small.png")}
+          src={require("../icons/other-small.png")}
           alt="indoor"
           className="icon"
         />

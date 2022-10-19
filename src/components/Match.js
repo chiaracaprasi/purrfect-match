@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Spinner } from "react-bootstrap";
 import axios from "axios";
 import MatchedCats from "./Matched/MatchedCats";
 import Form from "./Form/Form";
+import "./Matched/MatchedCats.css";
 
 function Match() {
   const [cats, setCats] = useState(null);
@@ -25,13 +25,11 @@ function Match() {
 
   if (loading === true) {
     return (
-      <Spinner
-        as="span"
-        animation="border"
-        size="sm"
-        role="status"
-        aria-hidden="true"
-      />
+      <>
+        <div className="loader-container">
+          <div className="spinner"></div>
+        </div>
+      </>
     );
   }
 

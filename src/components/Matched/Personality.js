@@ -12,7 +12,7 @@ const Personality = (props) => {
   const showChildren = (children) => {
     return children === true ? (
       <img
-        src={require("../Form/radio-icons/children.png")}
+        src={require("../icons/children.png")}
         alt="dogs"
         className="small-icon"
       />
@@ -20,26 +20,9 @@ const Personality = (props) => {
   };
 
   const indoor = (indoor) => {
-    return indoor === true ? (
-      <img
-        src={require("../Form/radio-icons/indoor.png")}
-        alt="indoor"
-        className="small-icon"
-      />
-    ) : (
-      <>
-        <img
-          src={require("../Form/radio-icons/indoor.png")}
-          alt="indoor"
-          className="small-icon"
-        />
-        <img
-          src={require("../Form/radio-icons/outdoor.png")}
-          alt="outdoor"
-          className="small-icon"
-        />
-      </>
-    );
+    return indoor === true
+      ? "am an indoor only cat."
+      : "am happy inside but will also need some time outdoors.";
   };
 
   const showAnimal = (other) => {
@@ -51,17 +34,17 @@ const Personality = (props) => {
       return (
         <>
           <img
-            src={require("../Form/radio-icons/other-dog.png")}
+            src={require("../icons/other-dog.png")}
             alt="dogs"
             className="small-icon"
           />
           <img
-            src={require("../Form/radio-icons/other-cat.png")}
+            src={require("../icons/other-cat.png")}
             alt="cats"
             className="small-icon"
           />
           <img
-            src={require("../Form/radio-icons/other-small.png")}
+            src={require("../icons/other-small.png")}
             alt="small animals"
             className="small-icon"
           />
@@ -71,12 +54,12 @@ const Personality = (props) => {
       return (
         <>
           <img
-            src={require("../Form/radio-icons/other-dog.png")}
+            src={require("../icons/other-dog.png")}
             alt="dogs"
             className="small-icon"
           />
           <img
-            src={require("../Form/radio-icons/other-cat.png")}
+            src={require("../icons/other-cat.png")}
             alt="cats"
             className="small-icon"
           />
@@ -86,12 +69,12 @@ const Personality = (props) => {
       return (
         <>
           <img
-            src={require("../Form/radio-icons/other-dog.png")}
+            src={require("../icons/other-dog.png")}
             alt="dogs"
             className="small-icon"
           />
           <img
-            src={require("../Form/radio-icons/other-small.png")}
+            src={require("../icons/other-small.png")}
             alt="small animals"
             className="small-icon"
           />
@@ -101,12 +84,12 @@ const Personality = (props) => {
       return (
         <>
           <img
-            src={require("../Form/radio-icons/other-cat.png")}
+            src={require("../icons/other-cat.png")}
             alt="cats"
             className="small-icon"
           />
           <img
-            src={require("../Form/radio-icons/other-small.png")}
+            src={require("../icons/other-small.png")}
             alt="small animals"
             className="small-icon"
           />
@@ -115,7 +98,7 @@ const Personality = (props) => {
     } else if (other.includes("cat")) {
       return (
         <img
-          src={require("../Form/radio-icons/other-cat.png")}
+          src={require("../icons/other-cat.png")}
           alt="cats"
           className="small-icon"
         />
@@ -123,7 +106,7 @@ const Personality = (props) => {
     } else if (other.includes("dog")) {
       return (
         <img
-          src={require("../Form/radio-icons/other-dog.png")}
+          src={require("../icons/other-dog.png")}
           alt="dogs"
           className="small-icon"
         />
@@ -131,7 +114,7 @@ const Personality = (props) => {
     } else if (other.includes("small")) {
       return (
         <img
-          src={require("../Form/radio-icons/other-small.png")}
+          src={require("../icons/other-small.png")}
           alt="small animals"
           className="small-icon"
         />
@@ -139,7 +122,7 @@ const Personality = (props) => {
     } else {
       return (
         <img
-          src={require("../Form/radio-icons/no-animals.png")}
+          src={require("../icons/no-animals.png")}
           alt="no other animals"
           className="small-icon"
         />
@@ -176,11 +159,8 @@ const Personality = (props) => {
             {showAnimal(props.cat[1].other_animals)}
           </p>
           <p>
-            <b>I can live:</b> <br></br>
-            {indoor(props.cat[1].indoor)}
-          </p>
-          <p>
-            I am <b>{highMedLow(props.cat[1].energy)}</b> energy and have{" "}
+            I {indoor(props.cat[1].indoor)} I am{" "}
+            <b>{highMedLow(props.cat[1].energy)}</b> energy and have{" "}
             <b>{highMedLow(props.cat[1].social)}</b> social needs. I will
             require a <b>{highMedLow(props.cat[1].grooming)}</b> amount of
             grooming to keep me looking my best.
