@@ -6,7 +6,7 @@ const Adopt = (props) => {
 
   return (
     <>
-      <Button variant="secondary" onClick={() => setShow(true)}>
+      <Button variant="secondary" className="m-1" onClick={() => setShow(true)}>
         Adopt Me
       </Button>
 

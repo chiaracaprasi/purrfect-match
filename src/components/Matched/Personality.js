@@ -136,7 +136,7 @@ const Personality = (props) => {
 
   return (
     <>
-      <Button variant="secondary" onClick={() => setShow(true)}>
+      <Button className="m-1" variant="secondary" onClick={() => setShow(true)}>
         More
       </Button>
 

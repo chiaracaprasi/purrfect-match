@@ -25,7 +25,7 @@ const MatchedCats = ({ cats = [] }) => {
             Breed: {cat[0].breed}
           </Card.Subtitle>
           <Card.Text>{shortBlurb}...</Card.Text>
-          <Card.Footer>
+          <Card.Footer className="border-0 bg-transparent">
             <Personality cat={cat} />
             <Adopt name={cat[0].name} photo={cat[0].photo} />
           </Card.Footer>
