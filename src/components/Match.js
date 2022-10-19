@@ -12,7 +12,7 @@ function Match() {
     setLoading(true);
     try {
       const result = await axios.post(
-        "http://b3549e1f1849.244fe182.hbtn-cod.io:5000/app/cat_matches",
+        "http://b3549e1f1849.244fe182.hbtn-cod.io:5000/api/cats/match",
         formData
       );
       setCats(result.data);

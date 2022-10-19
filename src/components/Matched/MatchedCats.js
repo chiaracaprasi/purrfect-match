@@ -20,7 +20,7 @@ const MatchedCats = ({ cats = [] }) => {
         <Card.Body>
           <Card.Title>{cat[0].name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            Age: {cat[0].dob} <br></br> Gender: {cat[0].sex}
+            Age: {cat[0].age} <br></br> Gender: {cat[0].sex}
           </Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">
             Breed: {cat[0].breed}
