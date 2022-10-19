@@ -22,7 +22,7 @@ function Grooming({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/grooming-1.png")}
+                  src={require("../icons/grooming-1.png")}
                   alt="low grooming"
                   className="icon"
                 />
@@ -42,7 +42,7 @@ function Grooming({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/grooming-2.png")}
+                  src={require("../icons/grooming-2.png")}
                   alt="medium grooming"
                   className="icon"
                 />
@@ -63,7 +63,7 @@ function Grooming({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/grooming-3.png")}
+                  src={require("../icons/grooming-3.png")}
                   alt="high grooming"
                   className="icon"
                 />

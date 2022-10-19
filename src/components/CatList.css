@@ -1,9 +1,0 @@
-ul > li {
-  list-style: none;
-}
-
-.card-img-top {
-  width: 88%;
-  height: 15vw;
-  object-fit: cover;
-}
