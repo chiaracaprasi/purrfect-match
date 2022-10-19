@@ -40,3 +40,7 @@ card-footer {
       no-repeat;
   z-index: 1;
 }
+
+.text-left{
+  text-align: left;
+}
