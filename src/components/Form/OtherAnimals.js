@@ -21,8 +21,9 @@ function OtherAnimals({ formData, setFormData }) {
     if (index === 0) {
       return (
         <img
+
           src={require("../icons/other-cat.png")}
-          alt="indoor"
+          alt="cat"
           className="icon"
         />
       );
@@ -30,7 +31,7 @@ function OtherAnimals({ formData, setFormData }) {
       return (
         <img
           src={require("../icons/other-dog.png")}
-          alt="indoor"
+          alt="dog"
           className="icon"
         />
       );
