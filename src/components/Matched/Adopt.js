@@ -32,7 +32,7 @@ const Adopt = (props) => {
             </div>
           </div>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="border-0 bg-transparent">
           <Button variant="secondary" onClick={() => setShow(false)}>
             Close
           </Button>
