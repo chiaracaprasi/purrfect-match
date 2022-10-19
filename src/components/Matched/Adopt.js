@@ -22,9 +22,15 @@ const Adopt = (props) => {
           <Modal.Title>Contact Us</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={props.photo} alt="" className="small" />
-          Please call us on 03 9595 9595 to arrange a time to meet your purrfect
-          match <b>{props.name}</b>!
+          <div class="flex-container">
+            <div>
+              <img src={props.photo} alt="" className="small" />{" "}
+            </div>
+            <div>
+              Please call us on 03 9595 9595 to arrange a time to meet your
+              purrfect match <b>{props.name}</b>!{" "}
+            </div>
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShow(false)}>

@@ -10,7 +10,11 @@ const Personality = (props) => {
   };
 
   const grooming = (rating) => {
-    return rating === "3" ? "a lot of" : rating === "2" ? "some" : "a little";
+    return rating === "3"
+      ? "a few days a week"
+      : rating === "2"
+      ? "once a week"
+      : "occasionally";
   };
 
   const showChildren = (children) => {
@@ -154,7 +158,11 @@ const Personality = (props) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={props.cat[0].photo} alt="" className="large" />
+          <img
+            src={props.cat[0].photo}
+            alt=""
+            className="large rounded mx-auto d-block"
+          />
           <p>{props.cat[0].blurb}</p>
 
           <p>
@@ -166,7 +174,7 @@ const Personality = (props) => {
             I {indoor(props.cat[1].indoor)} I am{" "}
             <b>{highMedLow(props.cat[1].energy)}</b> energy and have{" "}
             <b>{highMedLow(props.cat[1].social)}</b> social needs. I will
-            require <b>{grooming(props.cat[1].grooming)}</b> grooming to keep me
+            require grooming <b>{grooming(props.cat[1].grooming)}</b> to keep me
             looking my best.
           </p>
         </Modal.Body>
