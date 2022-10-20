@@ -101,7 +101,7 @@ function OtherAnimals({ formData, setFormData }) {
             </Card>
           </div>
 
-          <div></div>
+          <div className="container"></div>
           {animalOptions.map((animal, index) => (
             <div
               key={index}
