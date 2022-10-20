@@ -3,8 +3,10 @@ import { Card } from "react-bootstrap";
 import "./MatchedCats.css";
 import Adopt from "./Adopt";
 import Personality from "./Personality";
+import shuffle from "lodash/shuffle";
 
 const MatchedCats = ({ cats = [] }) => {
+  cats = shuffle(cats);
   let catObjects = [];
   for (let [key, value] of Object.entries(cats)) {
     catObjects.push(value);
