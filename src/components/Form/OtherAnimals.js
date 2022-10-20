@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Card from "react-bootstrap/Card";
-import CardGroup from "react-bootstrap/CardGroup";
+import { Card, CardGroup } from "react-bootstrap";
 
 function OtherAnimals({ formData, setFormData }) {
   const animalOptions = ["Cat", "Dog", "Small Animals"];
@@ -55,7 +54,7 @@ function OtherAnimals({ formData, setFormData }) {
   };
 
   return (
-    <Card>
+    <Card className="mt-2">
       <Card.Header>
         Do you have any other animals, or do they frequently visit your home?
       </Card.Header>
@@ -101,7 +100,7 @@ function OtherAnimals({ formData, setFormData }) {
             </Card>
           </div>
 
-          <div></div>
+          <div className="container"></div>
           {animalOptions.map((animal, index) => (
             <div
               key={index}

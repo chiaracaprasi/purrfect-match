@@ -42,3 +42,7 @@ img {
 .choice-card {
   border: none;
 }
+
+.container {
+  display: flex;
+}
