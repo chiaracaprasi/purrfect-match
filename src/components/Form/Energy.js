@@ -22,7 +22,7 @@ function Energy({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/energy-1.png")}
+                  src={require("../icons/energy-1.png")}
                   alt="low energy"
                   className="icon"
                 />
@@ -42,7 +42,7 @@ function Energy({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/energy-2.png")}
+                  src={require("../icons/energy-2.png")}
                   alt="medium energy"
                   className="icon"
                 />
@@ -62,7 +62,7 @@ function Energy({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/energy-3.png")}
+                  src={require("../icons/energy-3.png")}
                   alt="high energy"
                   className="icon"
                 />

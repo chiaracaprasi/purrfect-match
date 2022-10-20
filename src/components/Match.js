@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Spinner } from "react-bootstrap";
 import axios from "axios";
-import CatList from "./CatList";
+import MatchedCats from "./Matched/MatchedCats";
 import Form from "./Form/Form";
+import "./Matched/MatchedCats.css";
 
 function Match() {
   const [cats, setCats] = useState(null);
@@ -15,11 +15,7 @@ function Match() {
         "http://b3549e1f1849.244fe182.hbtn-cod.io:5000/app/cat_matches",
         formData
       );
-      let matchedCats = [];
-      for (let [key, value] of Object.entries(result.data)) {
-        matchedCats.push(value[0]);
-      }
-      setCats(matchedCats);
+      setCats(result.data);
     } catch (exceptionError) {
       console.log(exceptionError);
     } finally {
@@ -29,20 +25,18 @@ function Match() {
 
   if (loading === true) {
     return (
-      <Spinner
-        as="span"
-        animation="border"
-        size="sm"
-        role="status"
-        aria-hidden="true"
-      />
+      <>
+        <div className="loader-container">
+          <div className="spinner"></div>
+        </div>
+      </>
     );
   }
 
   if (cats === null) {
     return <Form callbackSubmit={handleSubmit} />;
   } else {
-    return <CatList cats={cats} />;
+    return <MatchedCats cats={cats} />;
   }
 }
 

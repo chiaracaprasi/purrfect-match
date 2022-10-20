@@ -1,0 +1,12 @@
+
+.Landing-page {
+  background-image: url("/public/images/kitten-landingpage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: calc(100% - 56px);
+  font-size: calc(10px + 2vmin);
+  color: 'dark';
+}
+  
