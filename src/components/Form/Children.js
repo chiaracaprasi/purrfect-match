@@ -24,7 +24,7 @@ function Children({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/children.png")}
+                  src={require("../icons/children.png")}
                   alt="children"
                   className="icon"
                 />
@@ -45,7 +45,7 @@ function Children({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/no-children.png")}
+                  src={require("../icons/no-children.png")}
                   alt="no children"
                   className="icon"
                 />

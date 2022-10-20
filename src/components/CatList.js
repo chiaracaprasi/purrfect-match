@@ -3,20 +3,20 @@ import { Button, Card } from "react-bootstrap";
 import "./CatList.css";
 
 const CatList = ({ cats = [] }) => {
+  console.log(cats);
   const renderCatCard = (cat) => {
-    console.log(cat);
     return (
-      <Card style={{ width: "18rem" }}>
+      <Card style={{ width: "16rem" }} key={cat.id} className="mb-4">
         <Card.Img className="img-thumbnail" variant="top" src={cat.photo} />
         <Card.Body>
           <Card.Title>{cat.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            Cat age: {cat.dob} Gender: {cat.sex}
+            Age: {cat.dob} <br></br> Gender: {cat.sex}
           </Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">
             Breed: {cat.breed}
           </Card.Subtitle>
-          <Card.Text>About: {cat.blurb}</Card.Text>
+          <Card.Text>{cat.blurb}</Card.Text>
           <Button variant="secondary">Match</Button>
         </Card.Body>
       </Card>
@@ -27,8 +27,8 @@ const CatList = ({ cats = [] }) => {
 
   return (
     <>
-      <h1>Your Purrfect Matches</h1>
-      <div class="d-flex justify-content-between flex-wrap p-5">
+      <h1 className="fs-6 text">You have {cats.length} matches</h1>
+      <div className="d-flex justify-content-between flex-wrap p-5">
         {listItems}
       </div>
     </>

@@ -1,6 +1,6 @@
 import { Button, Spinner, Card } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
-import CatList from "./CatList";
+import MatchedCats from "./MatchedCats";
 import { dummy_data } from "../DummyData";
 import Axios from "axios";
 
@@ -42,7 +42,7 @@ const CatBreedInfo = () => {
             aria-hidden="true"
           />
         ) : (
-          <CatList breeds={breedsInfo} />
+          <MatchedCats breeds={breedsInfo} />
         )}
       </div>
       <Button

@@ -20,7 +20,7 @@ function Social({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/social-1.png")}
+                  src={require("../icons/social-1.png")}
                   alt="low social"
                   className="icon"
                 />
@@ -40,7 +40,7 @@ function Social({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/social-2.png")}
+                  src={require("../icons/social-2.png")}
                   alt="medium social"
                   className="icon"
                 />
@@ -60,7 +60,7 @@ function Social({ formData, setFormData }) {
                   }}
                 />
                 <img
-                  src={require("./radio-icons/social-3.png")}
+                  src={require("../icons/social-3.png")}
                   alt="high social"
                   className="icon"
                 />
