@@ -6,6 +6,8 @@ Contains the class DBStorage
 from api.models.base_model import Base
 from api.models.cat_details import CatDetails
 from api.models.cat_personalities import CatPersonalities
+import os
+import pymysql
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
@@ -21,8 +23,8 @@ class DBStorage:
 
     def __init__(self):
         """Instantiate a DBStorage object"""
-        self.__engine = create_engine(
-            'mysql+mysqldb://root:password@localhost/cats')
+        db_url = os.getenv('MYSQL_DB_URL')
+        self.__engine = create_engine(db_url)
 
     def reload(self):
         """reloads data from the database"""
