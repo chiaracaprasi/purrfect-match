@@ -11,22 +11,30 @@ const MatchedCats = ({ cats = [] }) => {
   }
 
   const renderCatCard = (cat) => {
-    console.log(cat[0].name);
-    console.log("cat:" + cat);
+    const shortBlurb = cat[0].blurb.substring(0, 70);
 
     return (
-      <Card style={{ width: "16rem" }} key={cat[0].id}>
-        <Card.Img className="img-thumbnail" variant="top" src={cat[0].photo} />
+      <Card style={{ width: "16rem" }} key={cat[0].id} className="mx-auto m-2">
+        <Card.Img
+          className="img-thumbnail mx-auto"
+          variant="top"
+          src={cat[0].photo}
+        />
         <Card.Body>
           <Card.Title>{cat[0].name}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
-            Age: {cat[0].age} <br></br> Gender: {cat[0].sex}
+
+          <Card.Subtitle className="mb-2 text-muted text-left">
+            Age: {cat[0].dob}
+
           </Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">
+          <Card.Subtitle className="mb-2 text-muted text-left">
+            Sex: {cat[0].sex}
+          </Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted text-left">
             Breed: {cat[0].breed}
           </Card.Subtitle>
-          <Card.Text>{cat[0].blurb}</Card.Text>
-          <Card.Footer>
+          <Card.Text className="text-left">{shortBlurb}...</Card.Text>
+          <Card.Footer className="border-0 bg-transparent">
             <Personality cat={cat} />
             <Adopt name={cat[0].name} photo={cat[0].photo} />
           </Card.Footer>
@@ -39,7 +47,7 @@ const MatchedCats = ({ cats = [] }) => {
 
   return (
     <>
-      <h1>You have {catObjects.length} matches!</h1>
+      <h1 className="mt-5">You have {catObjects.length} matches!</h1>
       <div className="d-flex justify-content-between flex-wrap p-5">
         {catCard}
       </div>

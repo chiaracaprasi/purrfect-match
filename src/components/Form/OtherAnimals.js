@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
@@ -22,7 +22,7 @@ function OtherAnimals({ formData, setFormData }) {
       return (
         <img
           src={require("../icons/other-cat.png")}
-          alt="indoor"
+          alt="cat"
           className="icon"
         />
       );
@@ -30,7 +30,7 @@ function OtherAnimals({ formData, setFormData }) {
       return (
         <img
           src={require("../icons/other-dog.png")}
-          alt="indoor"
+          alt="dog"
           className="icon"
         />
       );
@@ -45,6 +45,15 @@ function OtherAnimals({ formData, setFormData }) {
     }
   };
 
+  const [radioStatus, setRadioStatus] = useState(0);
+  const radioHandler = (status) => {
+    setRadioStatus(status);
+
+    if (status === 0) {
+      setFormData({ ...formData, otherAnimals: [] });
+    }
+  };
+
   return (
     <Card>
       <Card.Header>
@@ -52,8 +61,53 @@ function OtherAnimals({ formData, setFormData }) {
       </Card.Header>
       <Card.Body>
         <CardGroup>
+          <div className="mx-auto">
+            <Card className="choice-card">
+              <label>
+                <input
+                  type="radio"
+                  name="release"
+                  value="0"
+                  checked={radioStatus === 0}
+                  onChange={() => radioHandler(0)}
+                />
+                <img
+                  src={require("../icons/no-animals.png")}
+                  alt="no-animals"
+                  className="icon"
+                />
+                <p>No</p>
+              </label>
+            </Card>
+          </div>
+
+          <div className="mx-auto">
+            <Card className="choice-card">
+              <label>
+                <input
+                  type="radio"
+                  name="release"
+                  value="1"
+                  checked={radioStatus === 1}
+                  onChange={() => radioHandler(1)}
+                />
+                <img
+                  src={require("../icons/yes-animals.png")}
+                  alt="no-animals"
+                  className="icon"
+                />
+                <p>Yes</p>
+              </label>
+            </Card>
+          </div>
+
+          <div className="container"></div>
           {animalOptions.map((animal, index) => (
-            <div key={index}>
+            <div
+              key={index}
+              className="mx-auto"
+              style={{ display: radioStatus === 1 ? "block" : "none" }}
+            >
               <Card className="choice-card">
                 <Card.Body>
                   <label>
@@ -67,7 +121,6 @@ function OtherAnimals({ formData, setFormData }) {
                       }
                       onChange={() => handleCheck(index)}
                     />
-
                     {showAnimal(index)}
                     <p>{animal}</p>
                   </label>

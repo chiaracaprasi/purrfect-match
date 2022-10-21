@@ -6,7 +6,7 @@ const Adopt = (props) => {
 
   return (
     <>
-      <Button variant="secondary" onClick={() => setShow(true)}>
+      <Button variant="secondary" className="m-1" onClick={() => setShow(true)}>
         Adopt Me
       </Button>
 
@@ -22,11 +22,17 @@ const Adopt = (props) => {
           <Modal.Title>Contact Us</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={props.photo} alt="" className="small" />
-          Please call us on 03 9595 9595 to arrange a time to meet your purrfect
-          match <b>{props.name}</b>!
+          <div className="flex-container">
+            <div>
+              <img src={props.photo} alt="" className="small" />{" "}
+            </div>
+            <div>
+              Please call us on 03 9595 9595 to arrange a time to meet your
+              purrfect match <b>{props.name}</b>!{" "}
+            </div>
+          </div>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="border-0 bg-transparent">
           <Button variant="secondary" onClick={() => setShow(false)}>
             Close
           </Button>

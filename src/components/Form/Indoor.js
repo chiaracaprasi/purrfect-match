@@ -41,7 +41,7 @@ function Indoor({ formData, setFormData }) {
                 />
                 <img
                   src={require("../icons/outdoor.png")}
-                  alt="indoor/outdoor"
+                  alt="outdoor"
                   className="icon"
                 />
                 <p>

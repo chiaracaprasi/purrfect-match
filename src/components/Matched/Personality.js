@@ -9,6 +9,14 @@ const Personality = (props) => {
     return rating === "3" ? "high" : rating === "2" ? "medium" : "low";
   };
 
+  const grooming = (rating) => {
+    return rating === "3"
+      ? "a few days a week"
+      : rating === "2"
+      ? "once a week"
+      : "occasionally";
+  };
+
   const showChildren = (children) => {
     return children === true ? (
       <img
@@ -132,7 +140,7 @@ const Personality = (props) => {
 
   return (
     <>
-      <Button variant="secondary" onClick={() => setShow(true)}>
+      <Button className="m-1" variant="secondary" onClick={() => setShow(true)}>
         More
       </Button>
 
@@ -150,7 +158,11 @@ const Personality = (props) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={props.cat[0].photo} alt="" className="large" />
+          <img
+            src={props.cat[0].photo}
+            alt=""
+            className="large mx-auto d-block"
+          />
           <p>{props.cat[0].blurb}</p>
 
           <p>
@@ -162,11 +174,11 @@ const Personality = (props) => {
             I {indoor(props.cat[1].indoor)} I am{" "}
             <b>{highMedLow(props.cat[1].energy)}</b> energy and have{" "}
             <b>{highMedLow(props.cat[1].social)}</b> social needs. I will
-            require a <b>{highMedLow(props.cat[1].grooming)}</b> amount of
-            grooming to keep me looking my best.
+            require grooming <b>{grooming(props.cat[1].grooming)}</b> to keep me
+            looking my best.
           </p>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className="border-0 bg-transparent">
           <Button variant="secondary" onClick={() => setShow(false)}>
             Close
           </Button>
