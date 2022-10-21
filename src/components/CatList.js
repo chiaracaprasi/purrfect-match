@@ -27,7 +27,7 @@ const CatList = ({ cats = [] }) => {
 
   return (
     <>
-      <h1>You have {cats.length} matches</h1>
+      <h1 className="fs-6 text">You have {cats.length} matches</h1>
       <div className="d-flex justify-content-between flex-wrap p-5">
         {listItems}
       </div>
