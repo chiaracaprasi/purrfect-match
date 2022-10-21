@@ -52,19 +52,19 @@ function Form({ callbackSubmit }) {
     page === 0 ? 0 : page === 1 ? 25 : page === 2 ? 50 : page === 3 ? 75 : 100;
 
   return (
-    <Card style={{ width: "70%" }} className="mx-auto m-5 p-1">
+    <Card style={{ width: "70%"}} className="mx-auto m-5 p-1 card-container">
       <Card.Body>
         <div className="progressBar">
           <ProgressBar variant="seconday" now={now} label={`${now}%`} />
         </div>
-        <div className="header p-2 mt-3">
+        <div className="header p-3 mt-3">
           <h1>{questions[page]}</h1>
         </div>
 
         <div className="body">{PageDisplay()}</div>
         <div className="footer">
           <Button
-            className="m-1 mt-3"
+            className="m-1 mt-4"
             variant="outline-primary"
             disabled={page === 0}
             onClick={() => setPage((currentPage) => currentPage - 1)}
@@ -72,7 +72,7 @@ function Form({ callbackSubmit }) {
             Prev
           </Button>{" "}
           <Button
-            className="m-1 mt-3"
+            className="m-1 mt-4"
             variant="outline-primary"
             onClick={() => {
               if (page === questions.length - 1) {

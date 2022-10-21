@@ -3,11 +3,8 @@ import "./PageNotFound.css";
 const PageNotFound = () => {
   return (
     <>
-      <p class="pt-5">
-        {" "}
-        Ooops... Page not found
-        <div class="page_not_found "></div>
-      </p>
+      <p class="pt-5"> Ooops... Page not found</p>
+      <div className="page_not_found "></div>
     </>
   );
 };
