@@ -3,9 +3,9 @@
 Contains the class DBStorage
 """
 
-from models.base_model import Base
-from models.cat_details import CatDetails
-from models.cat_personalities import CatPersonalities
+from api.models.base_model import Base
+from api.models.cat_details import CatDetails
+from api.models.cat_personalities import CatPersonalities
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
@@ -31,19 +31,6 @@ class DBStorage:
         Session = scoped_session(sess_factory)
         self.__session = Session
 
-    def new(self, obj):
-        """add an object to the current database session"""
-        self.__session.add(obj)
-
-    def save(self):
-        """commit all changes of the current database session"""
-        self.__session.commit()
-
-    def delete(self, obj=None):
-        """delete an object from the current database session"""
-        if obj:
-            self.__session.delete(obj)
-
     def close(self):
         """close the session attached to private attribute __session"""
         self.__session.remove()
@@ -58,6 +45,22 @@ class DBStorage:
                 objs = self.__session.query(classes[clss]).all()
         return objs
 
+    def match(self, cls, form_data):
+        """
+        Query on the current database session to retrieve all cats
+        matching the form_data passed in.
+        Return all matching cats or an empty array if no matches found
+        """
+        energy = form_data['energy']
+        grooming = form_data['grooming']
+        social = form_data['social']
+
+        return self.__session.query(cls).\
+            filter(cls.energy <= energy).\
+            filter(cls.grooming <= grooming).\
+            filter(cls.social <= social).\
+            all()
+
     def get(self, cls, id):
         """retrieve one object with matching id"""
         try:
@@ -68,13 +71,3 @@ class DBStorage:
                         return obj
         except Exception:
             return None
-
-    def update(self, obj=None):
-        """update an object in current database session"""
-        pass
-
-    def count(self, cls=None):
-        """retrieve number of objects in the db - limited
-        by class if cls provided
-        """
-        pass

@@ -31,8 +31,9 @@ const MatchedCats = ({ cats = [] }) => {
         />
         <Card.Body>
           <Card.Title>{cat[0].name}</Card.Title>
+
           <Card.Subtitle className="mb-2 text-muted text-left">
-            Age: {cat[0].dob}
+            Age: {cat[0].age}
           </Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted text-left">
             Sex: {cat[0].sex}
