@@ -22,7 +22,7 @@ const Adopt = (props) => {
           <Modal.Title>Contact Us</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div class="flex-container">
+          <div className="flex-container">
             <div>
               <img src={props.photo} alt="" className="small" />{" "}
             </div>
