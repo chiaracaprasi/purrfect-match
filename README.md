@@ -1,5 +1,6 @@
 # 🐱 Purrfect-Match 
-<img width="924" alt="Connecting humans to their perfect owner" src="https://user-images.githubusercontent.com/91517809/188571304-3a83c922-60a1-41e4-aa0a-f2031beb5945.png">
+![Screen Shot 2022-10-21 at 8 05 05 pm](https://user-images.githubusercontent.com/91517809/197158083-b635ba85-3b88-47c7-8461-aebc5e036f7d.png)
+
 
 ## 🐾 Welcome! 
 
@@ -44,14 +45,18 @@ npm start
 
 ### Front-End
 
-Our web app is a single-page app, coded mainly in Javascript and built using ReactJS. 
-We also incorporated React-Bootstrap for comoon elements such as buttons...
+Our web app is a single-page app built using ReactJS and Javascript. 
+We also used Bootstrap library for styling components and Axios library for HTTP requests. 
+The app was designed with a mobile/tablet first in mind. 
 
-## List of Components
+#### List of Components
 
 | Component | Description |
 |-----------|-------------|
 | LandingPage | The landing page a user sees when they navigate to **PurrfectMatch**. |
+| Form | The landing page a user sees when they navigate to **PurrfectMatch**. |
+| MatchedCats | The landing page a user sees when they navigate to **PurrfectMatch**. |
+
 
 ### Back-End
 
@@ -62,8 +67,10 @@ We also incorporated React-Bootstrap for comoon elements such as buttons...
 
 
 ## 🪲 Known bugs/limitations
+No known bugs 
+App is made to fit iPad and iPhone first so some elements in larger screen may not look as good.
 
-No code no bugs!
+
 
 ## ✍🏽 Authors / The Team 
 
