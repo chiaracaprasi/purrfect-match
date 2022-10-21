@@ -154,7 +154,7 @@ const Personality = (props) => {
       >
         <Modal.Header closeButton>
           <Modal.Title>
-            {props.cat[0].name} - {props.cat[0].dob}
+            {props.cat[0].name} - {props.cat[0].age}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
