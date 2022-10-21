@@ -19,10 +19,10 @@ const MatchedCats = ({ cats = [] }) => {
       <Card
         style={{ width: "16rem", border: "0.1rem solid #81b1b3" }}
         key={cat[0].id}
-        className="mx-auto m-2"
+        className="m-2 mx-auto "
       >
         <Card.Img
-          className="img-thumbnail"
+          className="img-thumbnail mx-auto "
           variant="top"
           src={cat[0].photo}
           style={{
