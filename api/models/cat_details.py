@@ -30,9 +30,7 @@ class CatDetails(BaseModel, Base):
 
         if not years:
             months = today.month - dob.month
-            if months > 1:
-                return f"{months} months"
-            return f"{months} month"
+            return f"{months}m"
 
         if today.month < dob.month:
             years -= 1
@@ -42,17 +40,9 @@ class CatDetails(BaseModel, Base):
 
         if not years:
             months = today.month - dob.month
-            if months > 1:
-                return f"{months} months"
-            return f"{months} month"
+            return f"{months}m"
 
         if months:
-            if years > 1 and months > 1:
-                return f"{years} years and {months} months"
-            if years > 1:
-                return f"{years} years and {months} month"
-            if months > 1:
-                return f"{years} year and {months} months"
-            return f"{years} year and {months} month"
+            return f"{years}yrs and {months}m"
 
-        return f"{years} years"
+        return f"{years}yrs"
