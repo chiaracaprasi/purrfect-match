@@ -17,34 +17,6 @@ function OtherAnimals({ formData, setFormData }) {
     setFormData({ ...formData, otherAnimals: currentAnimals });
   };
 
-  const showAnimal = (index) => {
-    if (index === 0) {
-      return (
-        <img
-          src={require("../icons/other-cat.png")}
-          alt="cat"
-          className="icon"
-        />
-      );
-    } else if (index === 1) {
-      return (
-        <img
-          src={require("../icons/other-dog.png")}
-          alt="dog"
-          className="icon"
-        />
-      );
-    } else {
-      return (
-        <img
-          src={require("../icons/other-small.png")}
-          alt="indoor"
-          className="icon"
-        />
-      );
-    }
-  };
-
   const [radioStatus, setRadioStatus] = useState(0);
   const radioHandler = (status) => {
     setRadioStatus(status);
@@ -52,6 +24,20 @@ function OtherAnimals({ formData, setFormData }) {
     if (status === 0) {
       setFormData({ ...formData, otherAnimals: [] });
     }
+  };
+
+  const showAnimal = (index) => {
+    return index === 0 ? (
+      <img src={require("../icons/other-cat.png")} alt="cat" className="icon" />
+    ) : index === 1 ? (
+      <img src={require("../icons/other-dog.png")} alt="dog" className="icon" />
+    ) : (
+      <img
+        src={require("../icons/other-small.png")}
+        alt="indoor"
+        className="icon"
+      />
+    );
   };
 
   return (
