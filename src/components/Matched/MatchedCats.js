@@ -19,7 +19,7 @@ const MatchedCats = ({ cats = [] }) => {
       <Card
         style={{ width: "16rem", border: "0.1rem solid #81b1b3" }}
         key={cat[0].id}
-        className="m-2 mx-auto "
+        className="m-2 mx-auto"
       >
         <Card.Img
           className="img-thumbnail mx-auto "
@@ -33,13 +33,11 @@ const MatchedCats = ({ cats = [] }) => {
           <Card.Title>{cat[0].name}</Card.Title>
 
           <Card.Subtitle className="mb-2 text-muted text-left">
-            Age: {cat[0].age}
+            {cat[0].sex} - {cat[0].age}
           </Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted text-left"></Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted text-left">
-            Sex: {cat[0].sex}
-          </Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted text-left">
-            Breed: {cat[0].breed}
+            {cat[0].breed}
           </Card.Subtitle>
           <Card.Text className="text-left">{shortBlurb}...</Card.Text>
           <Card.Footer className="border-0 bg-transparent">
@@ -55,7 +53,9 @@ const MatchedCats = ({ cats = [] }) => {
 
   return (
     <>
-      <h2 className="mt-5 mb-1">You have {catObjects.length} matches!</h2>
+      <h2 className="mt-5 mb-1 fs-4 text">
+        You have {catObjects.length} matches!
+      </h2>
       <div className="d-flex justify-content-between flex-wrap p-5">
         {catCard}
       </div>

@@ -37,6 +37,7 @@ img {
   height: 7rem;
   padding: 0.8rem;
   margin: 0.5rem;
+  
 }
 
 .choice-card {
@@ -45,4 +46,12 @@ img {
 
 .container{
   display: flex;
+}
+
+div.card-body {
+  padding-bottom: 0px;
+}
+
+.card-container {
+  max-width: 1000px;
 }

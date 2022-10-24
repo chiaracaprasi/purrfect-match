@@ -3,7 +3,6 @@ import { Button, Card } from "react-bootstrap";
 import "./CatList.css";
 
 const CatList = ({ cats = [] }) => {
-  console.log(cats);
   const renderCatCard = (cat) => {
     return (
       <Card style={{ width: "16rem" }} key={cat.id} className="mb-4">
@@ -11,10 +10,10 @@ const CatList = ({ cats = [] }) => {
         <Card.Body>
           <Card.Title>{cat.name}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            Age: {cat.dob} <br></br> Gender: {cat.sex}
+            {cat.dob} <br></br> {cat.sex}
           </Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">
-            Breed: {cat.breed}
+          {cat.breed}
           </Card.Subtitle>
           <Card.Text>{cat.blurb}</Card.Text>
           <Button variant="secondary">Match</Button>
