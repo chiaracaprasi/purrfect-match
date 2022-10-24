@@ -1,37 +1,42 @@
 version: "3.9"
 services:
-  nginx:
-    image: nginx
-    container_name: purrfect_match_nginx
-    ports:
-      - "8080:80"
+  mysql:
+    image: mysql:8.0.30-init-data
+    container_name: purrfect_match_mysql
+    build:
+      context: ./docker/database
+    restart: always
+    volumes:
+      - db_data:/var/lib/mysql:rw
+    environment:
+      MYSQL_ROOT_PASSWORD: password
 
   flask:
     image: python-flask
+    build:
+      context: ./docker/backend
     container_name: purrfect_match_flask
     ports:
       - "5001:5000"
-    command: ["python3", "-m", "api.app"]
-    # command: ["python3", "-m" , "flask", "--app", "app.py", "--debug", "run", "--host=0.0.0.0"]
-    # volumes:
-      # - ./api:/api
-    environment:
-      - MYSQL_DB_URL=mysql+pymysql://root:password@mysql:3306/cats?charset=utf8mb4
-
-  mysql:
-    image: mysql:8.0.30
-    container_name: purrfect_match_mysql
-    restart: always
+    command: [
+      "../wait_for_it.sh", "mysql:3306", "--",
+      "python3", "-m" , "flask", "--app", "app", "--debug", "run", "--host=0.0.0.0"
+    ]
     volumes:
-      - ./db_setup:/docker-entrypoint-initdb.d
+      - ./api:/api
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DB_URL: "mysql+pymysql://root:password@mysql:3306/cats?charset=utf8mb4"
+    depends_on:
+      - mysql
   
   adminer:
     image: adminer
+    container_name: purrfect_match_adminer
     restart: always
     ports:
       - 5003:8080
+    depends_on:
+      - mysql
 
 volumes:
   db_data:

@@ -1,41 +1,3 @@
--- delete database if already exists
-DROP DATABASE IF EXISTS cats;
-
--- create database
-CREATE DATABASE IF NOT EXISTS cats;
-
--- create user with all privileges
-CREATE USER IF NOT EXISTS 'root'@'localhost' IDENTIFIED BY 'password';
-
--- grant all privileges
-GRANT ALL on cats.* TO 'root'@'localhost';
-FLUSH PRIVILEGES;
-
--- create tables
-CREATE TABLE IF NOT EXISTS cats.cat_details (
-       id           INT UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT PRIMARY KEY,
-       created_at   DATETIME DEFAULT CURRENT_TIMESTAMP,
-       name 	      VARCHAR(50) NOT NULL,
-       dob 	      DATE NOT NULL,
-       sex 	      ENUM('Female', 'Male') NOT NULL,
-       breed 	      VARCHAR(50)  NOT NULL,
-       photo 	      VARCHAR(500) NOT NULL,
-       blurb 	      MEDIUMTEXT NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS cats.cat_personalities (
-       id           INT UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT PRIMARY KEY,
-       created_at   DATETIME DEFAULT CURRENT_TIMESTAMP,
-       grooming     ENUM('1', '2', '3') NOT NULL,
-       energy       ENUM('1', '2', '3') NOT NULL,
-       social       ENUM('1', '2', '3') NOT NULL,
-       other_animals SET('cat', 'dog', 'small') NOT NULL,
-       children     BOOLEAN NOT NULL,
-       indoor       BOOLEAN NOT NULL,
-       details_id   INT UNSIGNED ZEROFILL NOT NULL,
-       FOREIGN KEY(details_id) REFERENCES cat_details(id) ON DELETE CASCADE
-);
-
 -- switch to cats database
 USE cats;
 
@@ -249,4 +211,3 @@ INSERT INTO `cat_personalities` (`id`, `created_at`, `grooming`, `energy`, `soci
 INSERT INTO `cat_personalities` (`id`, `created_at`, `grooming`, `energy`, `social`, `other_animals`, `children`, `indoor`, `details_id`) VALUES (0000000099, '2020-05-03 21:31:51', '1', '2', '1', 'cat,dog,small', 1, 0, 0000000099);
 
 INSERT INTO `cat_personalities` (`id`, `created_at`, `grooming`, `energy`, `social`, `other_animals`, `children`, `indoor`, `details_id`) VALUES (0000000100, '2019-01-21 07:58:49', '1', '2', '3', 'cat,dog,small', 1, 1, 0000000100);
-
