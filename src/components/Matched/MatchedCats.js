@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 const MatchedCats = ({ cats = [] }) => {
   cats = shuffle(cats);
   let catObjects = [];
-  for (let [key, value] of Object.entries(cats)) {
-    catObjects.push(value);
+  for (const v of Object.values(cats)) {
+    catObjects.push(v);
   }
 
   const renderCatCard = (cat) => {
