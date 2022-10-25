@@ -1,12 +1,12 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import "./MatchedCats.css";
-import Adopt from "./Adopt";
-import Personality from "./Personality";
+import "./Matched/MatchedCats.css";
+import Adopt from "./Matched/Adopt";
+import Personality from "./Matched/Personality";
 import shuffle from "lodash/shuffle";
 import { Link } from "react-router-dom";
 
-const MatchedCats = ({ cats = [] }) => {
+const DisplayAllCats = ({ cats = [] }) => {
   cats = shuffle(cats);
   let catObjects = [];
   for (const v of Object.values(cats)) {
@@ -51,16 +51,13 @@ const MatchedCats = ({ cats = [] }) => {
 
   return (
     <>
-      <h2 className="mt-5 mb-1 fs-4 text">
-        You have {catObjects.length} matches!
-      </h2>
       <div className="d-flex justify-content-between flex-wrap p-5">
         {catCard}
       </div>
       <div>
-        <Link to="/all-cats">
+        <Link to="/match">
           <Button variant="secondary" className="mb-5" size="lg">
-            View all cats
+            Find Your Purrfect Match
           </Button>
         </Link>
       </div>
@@ -68,4 +65,4 @@ const MatchedCats = ({ cats = [] }) => {
   );
 };
 
-export default MatchedCats;
+export default DisplayAllCats;
