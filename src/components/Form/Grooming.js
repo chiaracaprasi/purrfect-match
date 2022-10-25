@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
 function Grooming({ formData, setFormData }) {
+  const [pulseAnimation, setPulseAnimation] = useState(0);
+  const [pulseAnimation2, setPulseAnimation2] = useState(0);
+  const [pulseAnimation3, setPulseAnimation3] = useState(0);
+
   return (
     <Card>
       <Card.Header>
@@ -25,6 +29,9 @@ function Grooming({ formData, setFormData }) {
                   src={require("../icons/grooming-1.png")}
                   alt="low grooming"
                   className="icon"
+                  onClick={() => setPulseAnimation(1)}
+                  onAnimationEnd={() => setPulseAnimation(0)}
+                  pulseAnimation={pulseAnimation}
                 />
                 <p>Not much time - less than 30 min a week</p>
               </label>
@@ -45,6 +52,9 @@ function Grooming({ formData, setFormData }) {
                   src={require("../icons/grooming-2.png")}
                   alt="medium grooming"
                   className="icon"
+                  onClick={() => setPulseAnimation2(1)}
+                  onAnimationEnd={() => setPulseAnimation2(0)}
+                  pulseAnimation={pulseAnimation2}
                 />
                 <p>Some time - up to 1 hr a week</p>
               </label>
@@ -66,6 +76,9 @@ function Grooming({ formData, setFormData }) {
                   src={require("../icons/grooming-3.png")}
                   alt="high grooming"
                   className="icon"
+                  onClick={() => setPulseAnimation3(1)}
+                  onAnimationEnd={() => setPulseAnimation3(0)}
+                  pulseAnimation={pulseAnimation3}
                 />
                 <p>Lots of time! - more than 1 hr a week</p>
               </label>

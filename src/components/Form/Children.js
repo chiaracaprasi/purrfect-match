@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState} from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import "./Form.css";
 
 function Children({ formData, setFormData }) {
+  const [pulseAnimation, setPulseAnimation] = useState(0);
+  const [pulseAnimation2, setPulseAnimation2] = useState(0);
+
   return (
     <Card>
       <Card.Header>
@@ -27,6 +30,9 @@ function Children({ formData, setFormData }) {
                   src={require("../icons/children.png")}
                   alt="children"
                   className="icon"
+                  onClick={() => setPulseAnimation(1)}
+                  onAnimationEnd={() => setPulseAnimation(0)}
+                  pulseAnimation={pulseAnimation}
                 />
                 <p>Yes</p>
               </label>
@@ -48,6 +54,9 @@ function Children({ formData, setFormData }) {
                   src={require("../icons/no-children.png")}
                   alt="no children"
                   className="icon"
+                  onClick={() => setPulseAnimation2(1)}
+                  onAnimationEnd={() => setPulseAnimation2(0)}
+                  pulseAnimation={pulseAnimation2}
                 />
               </label>
               <p>No</p>

@@ -55,3 +55,20 @@ div.card-body {
 .card-container {
   max-width: 1000px;
 }
+
+.icon[pulseAnimation='1'] {
+animation: pulseAnimation 1s 1;
+}
+
+
+@keyframes pulseAnimation {
+ 0% {
+transform: scale(1, 1);
+}
+50% {
+transform: scale(1.1, 1.1);
+}
+100% {
+transform: scale(1, 1);
+}
+}
