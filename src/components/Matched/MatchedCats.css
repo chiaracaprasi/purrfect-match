@@ -6,6 +6,9 @@ ul > li {
   width: 88%;
   height: 10rem;
   object-fit: cover;
+  margin-bottom: 0rem;
+  margin-top: 0.75rem;
+  border: 0.1rem solid #81b1b3;
 }
 
 .small {
@@ -31,6 +34,8 @@ ul > li {
   border-radius: 8%;
   border: 0.1rem solid #81b1b3;
   padding: 0.4rem;
+  margin-top: 0rem;
+  margin-bottom: 1.25rem;
 }
 
 card-footer {

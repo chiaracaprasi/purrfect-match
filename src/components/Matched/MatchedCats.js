@@ -22,15 +22,12 @@ const MatchedCats = ({ cats = [] }) => {
         className="m-2 mx-auto"
       >
         <Card.Img
-          className="img-thumbnail mx-auto "
+          className="img-thumbnail mx-auto"
           variant="top"
           src={cat[0].photo}
-          style={{
-            border: "0.1rem solid #81b1b3",
-          }}
         />
         <Card.Body>
-          <Card.Title>{cat[0].name}</Card.Title>
+          <Card.Title className="mt-0">{cat[0].name}</Card.Title>
 
           <Card.Subtitle className="mb-2 text-muted text-left">
             {cat[0].sex} - {cat[0].age}
