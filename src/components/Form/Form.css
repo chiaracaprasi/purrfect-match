@@ -56,12 +56,12 @@ div.card-body {
   max-width: 1000px;
 }
 
-.icon[pulseRing='1'] {
-animation: pulseRing 1s 1;
+.icon[pulseAnimation='1'] {
+animation: pulseAnimation 1s 1;
 }
 
 
-@keyframes pulseRing {
+@keyframes pulseAnimation {
  0% {
 transform: scale(1, 1);
 }

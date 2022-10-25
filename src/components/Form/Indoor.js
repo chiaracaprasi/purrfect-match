@@ -3,8 +3,8 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
 function Indoor({ formData, setFormData }) {
-  const [pulseRing, setPulseRing] = useState(0);
-  const [pulseRing2, setPulseRing2] = useState(0);
+  const [pulseAnimation, setPulseAnimation] = useState(0);
+  const [pulseAnimation2, setPulseAnimation2] = useState(0);
 
   return (
     <Card>
@@ -26,9 +26,9 @@ function Indoor({ formData, setFormData }) {
                   src={require("../icons/indoor.png")}
                   alt="indoor"
                   className="icon"
-                  onClick={() => setPulseRing(1)}
-                  onAnimationEnd={() => setPulseRing(0)}
-                  pulseRing={pulseRing}
+                  onClick={() => setPulseAnimation(1)}
+                  onAnimationEnd={() => setPulseAnimation(0)}
+                  pulseAnimation={pulseAnimation}
                 />
                 <p>I would prefer an indoor cat, or I live in a busy area</p>
               </label>
@@ -49,9 +49,9 @@ function Indoor({ formData, setFormData }) {
                   src={require("../icons/outdoor.png")}
                   alt="outdoor"
                   className="icon"
-                  onClick={() => setPulseRing2(1)}
-                  onAnimationEnd={() => setPulseRing2(0)}
-                  pulseRing={pulseRing2}
+                  onClick={() => setPulseAnimation2(1)}
+                  onAnimationEnd={() => setPulseAnimation2(0)}
+                  pulseAnimation={pulseAnimation2}
                 />
                 <p>
                   I can manage a cat that enjoys some time outdoors, and I live
