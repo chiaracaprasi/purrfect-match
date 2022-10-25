@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import MatchedCats from "./Matched/MatchedCats";
 import axios from "axios";
+import DisplayAllCats from "./DisplayAllCats";
 
 const AllCats = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -35,8 +35,8 @@ const AllCats = () => {
         </>
       ) : (
         <>
-          <h1 className="pt-4 pb-0 fs-2 text">All Cats</h1>
-          <MatchedCats cats={cats} />
+          <h1 className="pt-4 fs-2 text">All Cats</h1>
+          <DisplayAllCats cats={cats} />
         </>
       )}
     </>
