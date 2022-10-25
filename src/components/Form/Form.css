@@ -55,3 +55,20 @@ div.card-body {
 .card-container {
   max-width: 1000px;
 }
+
+.icon[pulseRing='1'] {
+animation: pulseRing 1s 1;
+}
+
+
+@keyframes pulseRing {
+ 0% {
+transform: scale(1, 1);
+}
+50% {
+transform: scale(1.1, 1.1);
+}
+100% {
+transform: scale(1, 1);
+}
+}
