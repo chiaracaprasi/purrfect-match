@@ -1,4 +1,3 @@
-import { Spinner } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import MatchedCats from "./Matched/MatchedCats";
 import axios from "axios";
@@ -9,15 +8,16 @@ const AllCats = () => {
 
   const fetchCats = async () => {
     setIsLoading(true);
-    const { data } = await axios.get(
-      "http://68d0752c1ac8.1e732e4d.hbtn-cod.io:5000/app/all_cats"
-    );
-    let allCats = [];
-    for (let [key, value] of Object.entries(data)) {
-      allCats.push(value[0]);
+    try {
+      const result = await axios.get(
+        "http://b3549e1f1849.244fe182.hbtn-cod.io:5000/api/cats/all"
+      );
+      setCats(result.data);
+    } catch (exceptionError) {
+      console.log(exceptionError);
+    } finally {
+      setIsLoading(false);
     }
-    setCats(allCats);
-    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -26,20 +26,19 @@ const AllCats = () => {
 
   return (
     <>
-      <h1 className="p-4 fs-2 text">All Cats</h1>
-      <div className="min-vh-50">
-        {isLoading ? (
-          <Spinner
-            as="span"
-            animation="border"
-            size="sm"
-            role="status"
-            aria-hidden="true"
-          />
-        ) : (
+      {isLoading ? (
+        <>
+          <div className="min-vh-50"></div>
+          <div className="loader-container">
+            <div className="spinner"></div>
+          </div>
+        </>
+      ) : (
+        <>
+          <h1 className="pt-4 pb-0 fs-2 text">All Cats</h1>
           <MatchedCats cats={cats} />
-        )}
-      </div>
+        </>
+      )}
     </>
   );
 };

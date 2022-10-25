@@ -1,9 +1,10 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import "./MatchedCats.css";
 import Adopt from "./Adopt";
 import Personality from "./Personality";
 import shuffle from "lodash/shuffle";
+import { Link } from "react-router-dom";
 
 const MatchedCats = ({ cats = [] }) => {
   cats = shuffle(cats);
@@ -55,6 +56,13 @@ const MatchedCats = ({ cats = [] }) => {
       </h2>
       <div className="d-flex justify-content-between flex-wrap p-5">
         {catCard}
+      </div>
+      <div>
+        <Link to="/all-cats">
+          <Button variant="secondary" className="mb-5" size="lg">
+            View all cats
+          </Button>
+        </Link>
       </div>
     </>
   );
