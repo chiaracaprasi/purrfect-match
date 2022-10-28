@@ -3,9 +3,9 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
 function Social({ formData, setFormData }) {
-  const [pulseAnimation, setPulseAnimation] = useState(0);
-  const [pulseAnimation2, setPulseAnimation2] = useState(0);
-  const [pulseAnimation3, setPulseAnimation3] = useState(0);
+  const [pulseanimation, setPulseanimation] = useState(0);
+  const [pulseanimation2, setPulseanimation2] = useState(0);
+  const [pulseanimation3, setPulseanimation3] = useState(0);
 
   return (
     <Card>
@@ -27,9 +27,9 @@ function Social({ formData, setFormData }) {
                   src={require("../icons/social-1.png")}
                   alt="low social"
                   className="icon"
-                  onClick={() => setPulseAnimation(1)}
-                  onAnimationEnd={() => setPulseAnimation(0)}
-                  pulseAnimation={pulseAnimation}
+                  onClick={() => setPulseanimation(1)}
+                  onAnimationEnd={() => setPulseanimation(0)}
+                  pulseanimation={pulseanimation}
                 />
                 <p>More often away than at home - 1-2 days a week</p>
               </label>
@@ -50,9 +50,9 @@ function Social({ formData, setFormData }) {
                   src={require("../icons/social-2.png")}
                   alt="medium social"
                   className="icon"
-                  onClick={() => setPulseAnimation2(1)}
-                  onAnimationEnd={() => setPulseAnimation2(0)}
-                  pulseAnimation={pulseAnimation2}
+                  onClick={() => setPulseanimation2(1)}
+                  onAnimationEnd={() => setPulseanimation2(0)}
+                  pulseanimation={pulseanimation2}
                 />
                 <p>A lot of the time - 3-4 days a week</p>
               </label>
@@ -73,9 +73,9 @@ function Social({ formData, setFormData }) {
                   src={require("../icons/social-3.png")}
                   alt="high social"
                   className="icon"
-                  onClick={() => setPulseAnimation3(1)}
-                  onAnimationEnd={() => setPulseAnimation3(0)}
-                  pulseAnimation={pulseAnimation3}
+                  onClick={() => setPulseanimation3(1)}
+                  onAnimationEnd={() => setPulseanimation3(0)}
+                  pulseanimation={pulseanimation3}
                 />
                 <p>Most of the time - 5+ days a week</p>
               </label>

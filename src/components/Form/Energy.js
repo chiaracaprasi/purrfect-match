@@ -3,9 +3,9 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
 function Energy({ formData, setFormData }) {
-  const [pulseAnimation, setPulseAnimation] = useState(0);
-  const [pulseAnimation2, setPulseAnimation2] = useState(0);
-  const [pulseAnimation3, setPulseAnimation3] = useState(0);
+  const [pulseanimation, setPulseanimation] = useState(0);
+  const [pulseanimation2, setPulseanimation2] = useState(0);
+  const [pulseanimation3, setPulseanimation3] = useState(0);
 
   return (
     <Card>
@@ -29,9 +29,9 @@ function Energy({ formData, setFormData }) {
                   src={require("../icons/energy-1.png")}
                   alt="low energy"
                   className="icon"
-                  onClick={() => setPulseAnimation(1)}
-                  onAnimationEnd={() => setPulseAnimation(0)}
-                  pulseAnimation={pulseAnimation}
+                  onClick={() => setPulseanimation(1)}
+                  onAnimationEnd={() => setPulseanimation(0)}
+                  pulseanimation={pulseanimation}
                 />
                 <p>Not much time - less than 15 min a day</p>
               </label>
@@ -52,9 +52,9 @@ function Energy({ formData, setFormData }) {
                   src={require("../icons/energy-2.png")}
                   alt="medium energy"
                   className="icon"
-                  onClick={() => setPulseAnimation2(1)}
-                  onAnimationEnd={() => setPulseAnimation2(0)}
-                  pulseAnimation={pulseAnimation2}
+                  onClick={() => setPulseanimation2(1)}
+                  onAnimationEnd={() => setPulseanimation2(0)}
+                  pulseanimation={pulseanimation2}
                 />
                 <p>Some time - 15 to 45 min a day</p>
               </label>
@@ -75,9 +75,9 @@ function Energy({ formData, setFormData }) {
                   src={require("../icons/energy-3.png")}
                   alt="high energy"
                   className="icon"
-                  onClick={() => setPulseAnimation3(1)}
-                  onAnimationEnd={() => setPulseAnimation3(0)}
-                  pulseAnimation={pulseAnimation3}
+                  onClick={() => setPulseanimation3(1)}
+                  onAnimationEnd={() => setPulseanimation3(0)}
+                  pulseanimation={pulseanimation3}
                 />
                 <p>Lots of time! - more than 45 min a day</p>
               </label>
