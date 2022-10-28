@@ -3,9 +3,9 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
 function Grooming({ formData, setFormData }) {
-  const [pulseAnimation, setPulseAnimation] = useState(0);
-  const [pulseAnimation2, setPulseAnimation2] = useState(0);
-  const [pulseAnimation3, setPulseAnimation3] = useState(0);
+  const [pulseanimation, setPulseanimation] = useState(0);
+  const [pulseanimation2, setPulseanimation2] = useState(0);
+  const [pulseanimation3, setPulseanimation3] = useState(0);
 
   return (
     <Card>
@@ -29,9 +29,9 @@ function Grooming({ formData, setFormData }) {
                   src={require("../icons/grooming-1.png")}
                   alt="low grooming"
                   className="icon"
-                  onClick={() => setPulseAnimation(1)}
-                  onAnimationEnd={() => setPulseAnimation(0)}
-                  pulseAnimation={pulseAnimation}
+                  onClick={() => setPulseanimation(1)}
+                  onAnimationEnd={() => setPulseanimation(0)}
+                  pulseanimation={pulseanimation}
                 />
                 <p>Not much time - less than 30 min a week</p>
               </label>
@@ -52,9 +52,9 @@ function Grooming({ formData, setFormData }) {
                   src={require("../icons/grooming-2.png")}
                   alt="medium grooming"
                   className="icon"
-                  onClick={() => setPulseAnimation2(1)}
-                  onAnimationEnd={() => setPulseAnimation2(0)}
-                  pulseAnimation={pulseAnimation2}
+                  onClick={() => setPulseanimation2(1)}
+                  onAnimationEnd={() => setPulseanimation2(0)}
+                  pulseanimation={pulseanimation2}
                 />
                 <p>Some time - up to 1 hr a week</p>
               </label>
@@ -76,9 +76,9 @@ function Grooming({ formData, setFormData }) {
                   src={require("../icons/grooming-3.png")}
                   alt="high grooming"
                   className="icon"
-                  onClick={() => setPulseAnimation3(1)}
-                  onAnimationEnd={() => setPulseAnimation3(0)}
-                  pulseAnimation={pulseAnimation3}
+                  onClick={() => setPulseanimation3(1)}
+                  onAnimationEnd={() => setPulseanimation3(0)}
+                  pulseanimation={pulseanimation3}
                 />
                 <p>Lots of time! - more than 1 hr a week</p>
               </label>

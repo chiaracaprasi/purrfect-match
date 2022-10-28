@@ -4,11 +4,11 @@ import CardGroup from "react-bootstrap/CardGroup";
 
 function OtherAnimals({ formData, setFormData }) {
   const animalOptions = ["Cat", "Dog", "Small Animals"];
-  const [pulseAnimation, setPulseAnimation] = useState(0);
-  const [pulseAnimation2, setPulseAnimation2] = useState(0);
-  const [pulseAnimation3, setPulseAnimation3] = useState(0);
-  const [pulseAnimation4, setPulseAnimation4] = useState(0);
-  const [pulseAnimation5, setPulseAnimation5] = useState(0);
+  const [pulseanimation, setPulseanimation] = useState(0);
+  const [pulseanimation2, setPulseanimation2] = useState(0);
+  const [pulseanimation3, setPulseanimation3] = useState(0);
+  const [pulseanimation4, setPulseanimation4] = useState(0);
+  const [pulseanimation5, setPulseanimation5] = useState(0);
 
   const handleCheck = (index) => {
     const currentAnimals = formData.otherAnimals;
@@ -37,27 +37,27 @@ function OtherAnimals({ formData, setFormData }) {
         src={require("../icons/other-cat.png")}
         alt="cat"
         className="icon"
-        onClick={() => setPulseAnimation3(1)}
-        onAnimationEnd={() => setPulseAnimation3(0)}
-        pulseAnimation={pulseAnimation3}
+        onClick={() => setPulseanimation3(1)}
+        onAnimationEnd={() => setPulseanimation3(0)}
+        pulseanimation={pulseanimation3}
       />
     ) : index === 1 ? (
       <img
         src={require("../icons/other-dog.png")}
         alt="dog"
         className="icon"
-        onClick={() => setPulseAnimation4(1)}
-        onAnimationEnd={() => setPulseAnimation4(0)}
-        pulseAnimation={pulseAnimation4}
+        onClick={() => setPulseanimation4(1)}
+        onAnimationEnd={() => setPulseanimation4(0)}
+        pulseanimation={pulseanimation4}
       />
     ) : (
       <img
         src={require("../icons/other-small.png")}
         alt="other small animals"
         className="icon"
-        onClick={() => setPulseAnimation5(1)}
-        onAnimationEnd={() => setPulseAnimation5(0)}
-        pulseAnimation={pulseAnimation5}
+        onClick={() => setPulseanimation5(1)}
+        onAnimationEnd={() => setPulseanimation5(0)}
+        pulseanimation={pulseanimation5}
       />
     );
   };
@@ -83,9 +83,9 @@ function OtherAnimals({ formData, setFormData }) {
                   src={require("../icons/no-animals.png")}
                   alt="no-animals"
                   className="icon"
-                  onClick={() => setPulseAnimation(1)}
-                  onAnimationEnd={() => setPulseAnimation(0)}
-                  pulseAnimation={pulseAnimation}
+                  onClick={() => setPulseanimation(1)}
+                  onAnimationEnd={() => setPulseanimation(0)}
+                  pulseanimation={pulseanimation}
                 />
                 <p>No</p>
               </label>
@@ -106,9 +106,9 @@ function OtherAnimals({ formData, setFormData }) {
                   src={require("../icons/yes-animals.png")}
                   alt="yes-animals"
                   className="icon"
-                  onClick={() => setPulseAnimation2(1)}
-                  onAnimationEnd={() => setPulseAnimation2(0)}
-                  pulseAnimation={pulseAnimation2}
+                  onClick={() => setPulseanimation2(1)}
+                  onAnimationEnd={() => setPulseanimation2(0)}
+                  pulseanimation={pulseanimation2}
                 />
                 <p>Yes</p>
               </label>
