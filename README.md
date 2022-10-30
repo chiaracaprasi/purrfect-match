@@ -49,21 +49,25 @@ Our web app is a single-page app built using ReactJS and Javascript.
 We also used Bootstrap library for styling components and Axios library for HTTP requests. 
 The app was designed with a mobile/tablet first in mind. 
 
-#### List of Components
+#### Main Components
 
 | Component | Description |
 |-----------|-------------|
 | LandingPage | The landing page a user sees when they navigate to **PurrfectMatch**. |
-| Form | The landing page a user sees when they navigate to **PurrfectMatch**. |
-| MatchedCats | The landing page a user sees when they navigate to **PurrfectMatch**. |
+| Form | The quiz the user completes to match with suitable cats. |
+| MatchedCats | The cats suitable for the user based on their answers to the quiz. |
 
 
-### Back-End
+### API & Back-End
 
 
 
 ### Database 
 
+We use a MySQL database for storing the cats. There are 2 tables: details and personality, 
+with details being the primary table and personality linked with a foreign key. The data that is 
+matched from the quiz results are stored in personality; once a cat is matched by the core 
+algorithm, data from both tables are included as an object and sent to the API.
 
 
 ## 🪲 Known bugs/limitations
@@ -71,9 +75,8 @@ No known bugs
 App is made to fit iPad and iPhone first so some elements in larger screen may not look as good.
 
 
-
 ## ✍🏽 Authors / The Team 
 
 * **Chiara Caprasi** - Cat mum and passionate front-end developer 
 * **Farah Mccurdy** - Cat mum and amazing jack-of-all-trades full stack developer  
-* **Karoline Silva** - Soon-to-be cat mum and fabolous back-end and DevOps 
+* **Karoline Silva** - Soon-to-be cat mum and fabulous back-end and DevOps 
