@@ -34,106 +34,25 @@ const Personality = (props) => {
   };
 
   const showAnimal = (other) => {
-    if (
-      other.includes("dog") &&
-      other.includes("cat") &&
-      other.includes("small")
-    ) {
+    let arrayOfAnimalImages = [];
+    if (other.includes("dog")) {
+      arrayOfAnimalImages.push("images/other-dog.png");
+    }
+    if (other.includes("cat")) {
+      arrayOfAnimalImages.push("images/other-cat.png");
+    }
+    if (other.includes("small")) {
+      arrayOfAnimalImages.push("images/other-small.png");
+    }
+    if (other.length === 0) {
+      arrayOfAnimalImages.push("images/no-animals.png");
+    }
+
+    for (const animalImage of arrayOfAnimalImages) {
       return (
         <>
-          <img
-            src={require("../icons/other-dog.png")}
-            alt="dogs"
-            className="small-icon"
-          />
-          <img
-            src={require("../icons/other-cat.png")}
-            alt="cats"
-            className="small-icon"
-          />
-          <img
-            src={require("../icons/other-small.png")}
-            alt="small animals"
-            className="small-icon"
-          />
+          <img src={animalImage} className="small-icon" />
         </>
-      );
-    } else if (other.includes("dog") && other.includes("cat")) {
-      return (
-        <>
-          <img
-            src={require("../icons/other-dog.png")}
-            alt="dogs"
-            className="small-icon"
-          />
-          <img
-            src={require("../icons/other-cat.png")}
-            alt="cats"
-            className="small-icon"
-          />
-        </>
-      );
-    } else if (other.includes("dog") && other.includes("small")) {
-      return (
-        <>
-          <img
-            src={require("../icons/other-dog.png")}
-            alt="dogs"
-            className="small-icon"
-          />
-          <img
-            src={require("../icons/other-small.png")}
-            alt="small animals"
-            className="small-icon"
-          />
-        </>
-      );
-    } else if (other.includes("cat") && other.includes("small")) {
-      return (
-        <>
-          <img
-            src={require("../icons/other-cat.png")}
-            alt="cats"
-            className="small-icon"
-          />
-          <img
-            src={require("../icons/other-small.png")}
-            alt="small animals"
-            className="small-icon"
-          />
-        </>
-      );
-    } else if (other.includes("cat")) {
-      return (
-        <img
-          src={require("../icons/other-cat.png")}
-          alt="cats"
-          className="small-icon"
-        />
-      );
-    } else if (other.includes("dog")) {
-      return (
-        <img
-          src={require("../icons/other-dog.png")}
-          alt="dogs"
-          className="small-icon"
-        />
-      );
-    } else if (other.includes("small")) {
-      return (
-        <img
-          src={require("../icons/other-small.png")}
-          alt="small animals"
-          className="small-icon"
-        />
-      );
-    } else {
-      return (
-        <img
-          src={require("../icons/no-animals.png")}
-          alt="no other animals"
-          className="small-icon"
-        />
       );
     }
   };
